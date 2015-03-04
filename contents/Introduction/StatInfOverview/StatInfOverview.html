@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Overview</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Overview</h1>
+		</header>
+		
+		<article class="subsection">
+		    <h1>What is statistical inference?</h1>
+		    <ul>
+		        <li>the process of drawing <em>conclusions</em> from data</li>
+		        <li>with data subject to random <em>variation</em> (observational errors or sampling)</li>
+		        <li>need to <em>quantify uncertainty</em> associated with conclude from incomplete data that may <em>change</em> over time</li>
+		        <li>drawing conclusions &rightarrow; <em>inferring facts</em></li>
+		        <li>create <b>new knowledge</b> from noisy uncertain data</li>
+		    </ul>
+		    
+		    <h2 id="">in practice</h2>
+		    <ul>
+		        <li>used to test <em>hypotheses</em> and make <em>estimations</em> from sample data:</li>
+		        <li>answers the questions: <em>what should be done next?</em></li>
+		        <li><em>descriptive statistics</em> describe a sample; <em>inferential statistics</em> infer <em>predictions</em> about populations</li>
+		    </ul>
+		    
+		    
+		</article>
+		
+		<article class="subsection">
+		    <h1>Statistical propositions</h1>
+		    <ul>
+		        <li><em>statistical proposition</em>: <em>conclusion</em> of a <!--statistical--> inference system</li>
+		        <li><em>inference</em> system or <em>inductive</em> system should produce reasonable and <span class="tooltip" title="applicable to a range of situations">general</span> answers</li>
+		        <li><em>forms</em> of statistical proposition:</li>
+		    </ul>
+		    
+		    <table>
+		        <tbody>
+		            <tr>
+		                <td><a href="" target="_self">estimate</a></td>
+		                <td>value that best approximates some parameter of interest</td>
+		            </tr>
+		            <tr>
+		                <td><a href="" target="_self">confidence interval</a></td>
+		                <td>or set estimate; set of values that would contain the true parameter value with some probability</td>
+		            </tr>
+		            <tr>
+		                <td><a href="" target="_self">credible interval</a></td>
+		                <td>or Bayesian confidence interval; set of values containing, for example, 95% of posterior belief</td>
+		            </tr>
+		            <tr>
+		                <td><a href="" target="_self">hypothesis test</a></td>
+		                <td>rejections of it</td>
+		            </tr>
+		            <tr>
+		                <td><a href="" target="_self">clustering</a></td>
+		                <td>or classification; arrange data points into groups</td>
+		            </tr>
+		        </tbody>
+		    </table>
+		    
+		</article>
+		
+		<article class="subsection">
+		    <h1>Styles of inference</h1>
+		    <p>Different thinking about probability leads to different styles of inference.</p>
+		    <dl>
+		        <dt>Frequency:</dt>
+		            <dd>
+		            <table>
+		                <tbody>
+		                    <tr>
+		                        <td><i>probability</i></td>
+		                        <td><em>long run</em> proportion of times an event occurs; independent, identically distributed repetitions</td>
+		                    </tr>
+		                    <tr>
+		                        <td><i>inference</i></td>
+		                        <td>uses <em>frequency</em> probability <em>interpretations</em> to control error rates; "What should I decide given my data <em>controlling</em> the <em>long run proportion</em> of mistakes I make at a tolerable level."</td>
+		                    </tr>
+		                </tbody>
+		            </table>
+		            </dd>
+		        <dt>Bayesian:</dt>
+		            <dd><table>
+		                <tbody>
+		                    <tr>
+		                        <td><i>probability</i></td>
+		                        <td>probability calculus of <em>beliefs</em>; given that beliefs follow certain rules</td>
+		                    </tr>
+		                    <tr>
+		                        <td><i>inference</i></td>
+		                        <td>uses Bayesian probability representation of <em>beliefs</em> to perform <em>inference</em>; "Given my subjective beliefs and the objective information from the data, <em>what</em> should I <em>believe now</em>?"</td>
+		                    </tr>
+		                </tbody>
+		            </table></dd>
+		    </dl>
+		</article>
+		
+		<article class="subsection">
+		    <h1>Concerns to perform inference</h1>
+		    <ul>
+				<li><em>Is the sample representative</em> of the population that we'd like to draw inferences about?</li>
+				<li><em>Are there</em> known and observed, known and unobserved or unknown and unobserved <em>variables that contaminate</em> our conclusions?</li>
+				<li>Is there <em>systematic bias</em> by missing data or the design or conduct of the study?</li>
+				<li><em>What randomness exists</em> in the data and <em>how</em> do we <em>use or adjust for it</em>? &mdash;here randomness can be either explicit via randomization or random sampling, or implicit as the aggregation of many complex unknown processes.</li>
+				<li>Are we <em>trying to estimate an underlying mechanistic model</em> of phenomena under study?. If so we can <em>build that model into</em> our statistical inference probability model.</li>
+			</ul>
+		</article>  
+		
+
+		
+	</body>
+</html>	
