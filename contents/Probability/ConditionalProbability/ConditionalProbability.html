@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Conditional probability</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Conditional probability</h1>
+		</header>
+		
+		<article class="subsection">
+		    
+			<article class="definition">
+		        <h1>Conditional probability</h1>
+		        <p>Le \(B\) be an event so that \(P(B) > 0\). Then the conditional probability of an event \(A\) given that \(B\) has occurred is:
+		        $$P(A | B) = \frac{P(A \cap B)}{P(B)}$$
+		        if \(A\) and \(B\) are <em>not independent</em>.</p>
+		    </article>
+		    
+		    <article class="definition">
+		        <h1>Event independence</h1>
+		        <p>Event \(A\) is <span class="tooltip" title="statistically unrelated from one and another">independent</span> of event \(B\) if:
+		        $$P(A|B) = P(A) \, \, \, \text{where} \, \, \, P(B)>0$$
+		        equivalent to:
+		        $$P(A \cap B) = P(A)P(B)$$</p>
+		    </article>  
+		</article>
+		
+		<article class="subsection">
+		    <h1>IID random variables</h1>
+		    <ul>
+		        <li>said to be IID if they are <em>independent</em> and <em>identically distributed</em></li>
+		        <li><em>independent</em>: statistically unrelated from one and another</li>
+		        <li><em>identically distributed</em>: all having been drawn from the same population distribution</li>
+		        <li>are the <em>default model</em> for random samples</li>
+		    </ul>
+		    
+		</article>
+		
+		
+		
+		<article class="exercise">
+		    <h1>Rolling conditional dice</h1>
+		    <p>The probability of getting a 1 rolling a standar dice is assumed to be \(\frac{1}{6}\). Suppose you're given the extra information that the die roll was and odd number, hence 1, 3, or 5.</p>
+		    <p><em>Conditional</em> on this new information, what is the probability of getting a 1?</p>
+		    <h2></h2>
+		    <!-- solution -->
+		    <p>$$A=\{1\}; \, \, \, \, B=\{1,3,5\}$$
+		    $$A \cap B = \{1\}$$</p>
+		    <p>$$P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(\{1\})}{P(\{1,3,5\})} = \frac{1/6}{3/6} \,\,\, \therefore $$
+		    <br>
+		    $$P(\text{one given that roll is odd}) = P(A|B) = \frac{1}{3}$$</p>
+		</article>  
+		
+		<article class="subsection">
+		    <h1>Baye's rule</h1>
+		    <ul>
+		        <li>allows to <em>reverse</em> the <em>role of events</em> involved in conditional probability</li>
+		        <li>relates \(P(B|A)\) with \(P(A|B)\)</li>
+		    </ul>
+		    
+		    <p>$$P(B|A) = \frac{P(A|B)P(B)}{P(A|B)P(B)+P(A|B^c)P(B^c)}$$
+		    where:</p>
+		    <ul>
+		        <li>\(P(A|B^c) = 1 - P(A^c|B^c)\)</li>
+		        <li>\(P(B^c) = 1 - P(B)\)</li>
+		    </ul>
+		    
+		    
+		</article>
+		
+		<article class="exercise">
+		    <h1>Baye's rule</h1>
+		    <ul>
+		        <li><a href="media/CondProb.pdf" target="_blank">Medical tests</a></li>
+		    </ul>
+		    
+		</article>
+		
+	</body>
+</html>	

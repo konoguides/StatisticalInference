@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Probability distribution</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Probability distribution</h1>
+		</header>
+		
+		<article class="subsection">
+			<h1>Probability distribution</h1>
+			<ul>
+			    <li><em>function</em> \(P\) from random variable <em>value</em> <em>to</em> its associated <em>probability</em></li>
+			    <li>propose statements about the population, not of the data itself</li>
+			    <li><em>random variates</em>: realizations of random variable according to its probability distribution</li>
+			    <li>can be <span class="tooltip" title="gives the probability of a single random variable taking on various alternative values">univariate</span> or <span class="tooltip" title="gives the probabilities of a random vector &mdash;a set of two or more random variables&mdash; taking on various combinations of values">multivariate</span></li>
+			    <li>the <em>sum</em> of possible values (or area) has to add <em>up to one</em></li>
+			    <li>must be \(\geq 0\) everywhere</li>
+			    <li>two principal varieties:</li>
+			</ul>
+			<table>
+			    <tbody>
+			        <tr>
+			            <td><a href="" target="_self">discrete</a></td>
+			            <td>for discrete random variables; known as <em>probability mass function (PMF)</em>; probability that the variable takes a specific value</td>
+			        </tr>
+			        <tr>
+			            <td><a href="" target="_self">continuous</a></td>
+			            <td>for continuous random variables; known as <em>probability density function (PDF)</em>; probability that variable line within some range; area under <em>PDF</em> correspond to probabilities for that random variable; <em>derivate</em> of <em>CDF</em></td>
+			        </tr>
+			    </tbody>
+			</table>
+			
+		</article>
+		
+		<article class="subsection">
+			<h1>Cumulative distribution function (CDF)</h1>
+			<ul>
+			    <li>returns probability that random variable \(X\) is \(\leq x\) some value
+			    $$F_X(x) = P(X \leq x)$$</li>
+			    <li>it gives the area under the PDF associated with \(X\), from \(-\infty\) to \(x\)</li>
+			    <li>also used to specify distribution of multivariate random variables</li>
+			    <li>also known simply as <em>distribution function</em></li>
+			</ul>
+			
+		</article>
+		
+		<article class="subsection">
+		    <h1>Survival functions</h1>
+		    <ul>
+		        <li>returns the probability that random variable \(X\) is \(\gt x\) value
+		        $$S_X(x) = P(X \gt x)$$</li>
+		        <li>is the inverse of CDF: \(S(x) = 1 - F(x)\)</li>
+		    </ul>
+		    
+		</article>
+		
+		<article class="subsection">
+		    <h1>How to specify a probability distribution</h1>
+		    <p>A probability distribution can be specified by suppluying:</p>
+		    <ul>
+		        <li>a probability mass function (pmf)</li>
+		        <li>a probability density function (pdf)</li>
+		        <li>a cumulative distribution function</li>
+		        <li>a survival function</li>
+		        <li>a hazard function</li>
+		        <li>a characteristic function</li>
+		        <li>a rule for constructing a new random variable from other random variables, whose joint probability distribution is known</li>
+		    </ul>
+		    
+		</article>
+		
+		<article class="subsection">
+		    <h1><span class="textmarker">Python</span> - PDF, PMF, CDF &amp; survival function</h1>
+		    <p></p>
+		</article>
+		
+		<article class="subsection">
+		    <h1><span class="textmarker">R</span> - PDF, PMF, CDF &amp; survival function</h1>
+		    <ul>
+		        <li>probability distribution functions <em>begin</em> with <em><code>p</code></em></li>
+		        <li>for exaple the <i>beta distribution</i>:
+		        <pre><code>pbeta(0.75,2,1)</code></pre>
+		        </li>
+		    </ul>
+		    
+		</article>
+		
+	</body>
+</html>	

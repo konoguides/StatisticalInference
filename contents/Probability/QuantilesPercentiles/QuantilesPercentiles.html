@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Quantiles and percentiles</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Quantiles and percentiles</h1>
+		</header>
+		
+		<article class="subsection">
+			<h1>Quantiles</h1>
+			<ul>
+			    <li>values taken at regular intervals from the CDF-inverse</li>
+			    <li><em>motivation</em>: dividing ordered data into essentially <em>equal-sized subsets</em></li>
+			    <li>values marking the <em>boundaries</em> between consecutive subsets</li>
+			</ul>
+			
+			<article class="definition">
+			    <h1>\(\alpha^{th}\) quantile</h1>
+			    <p>The \(\alpha^{th}\) quantile fo a distribution with cumulative distribution function \(F\) is the point \(x_{\alpha}\) so that
+			    $$F_X(x_{\alpha}) = \alpha$$</p>
+			</article>
+			
+			<figure>
+			    <img src="media/InverseCDF.png" alt="alt-text" width="350px" height="px">
+			    <figcaption>Ilustrating the CDF-inverse search</figcaption>
+			</figure>
+			
+			<article class="warning">When a quantile come from a <em>distribution</em> it is refering to the <em>population</em>. When comes from sample it is the <em>estimator</em> of the population <em>estimand</em>.</article>
+			
+		</article>
+		
+		<article class="subsection">
+		    <h1>Percentile</h1>
+		    <ul>
+		        <li>simply a <em>quantile</em> with <em>\(\alpha\)</em> expressed <em>as percent</em></li>
+		    </ul>
+		    
+		</article>
+		
+		<article class="subsection">
+		    <h1>Specialiced quantiles</h1>
+		    <p>Some <i>q</i>-quantiles have special names:</p>
+		    <table>
+		        <tbody>
+		            <tr>
+		                <td><a href="" target="_self">median</a></td>
+		                <td>the only 2-quantile</td>
+		                <td><a href="" target="_self">sextiles &rightarrow; S</a></td>
+		                <td>the 6-quantiles</td>
+		            </tr>
+		            <tr>
+		                <td><a href="" target="_self">terciles &rightarrow; T</a></td>
+		                <td>the 3-quantiles</td>
+		                <td><a href="" target="_self">deciles &rightarrow; D</a></td>
+		                <td>the 10-quantiles</td>
+		            </tr>
+		            <tr>
+		                <td><a href="" target="_self">quartiles &rightarrow; Q</a></td>
+		                <td>the 4-quantiles</td>
+		                <td><a href="" target="_self">vigintiles &rightarrow; V</a></td>
+		                <td>the 20-quantiles</td>
+		            </tr>
+		            <tr>
+		                <td><a href="" target="_self">quintiles &rightarrow; QU</a></td>
+		                <td>the 5-quantiles</td>
+		                <td><a href="" target="_self">percentiles &rightarrow; P</a></td>
+		                <td>the 100-quantiles</td>
+		            </tr>
+		        </tbody>
+		    </table>
+		    
+		</article>
+		
+		<article class="exercise">
+		    <h1>Quantiles</h1>
+		    <ul>
+		        <li><a href="media/Quantiles.pdf" target="_blank">median</a></li>
+		    </ul>
+		    
+		</article>  
+		
+		<article class="subsection">
+		    <h1><span class="textmarker">Python</span> - quantiles</h1>
+		    <p></p>
+		</article>
+		
+		<article class="subsection">
+		    <h1><span class="textmarker">R</span> - quantiles</h1>
+		    <ul>
+		        <li>inverse cumulative distribution functions <em>begin</em> with <em><code>q</code></em></li>
+		        <li>for exaple the <i>beta distribution</i>:
+		        <pre><code>qbeta(0.5,2,1)</code></pre>
+		        </li>
+		    </ul>
+		    
+		</article>
+		
+	</body>
+</html>	

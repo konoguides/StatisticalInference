@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Expected value</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Expected value</h1>
+		</header>
+		
+		<article class="subsection">
+			<h1>Expected value</h1>
+			<ul>
+			    <li>denoted as \(E[X]\), and is a <em>property of distributions</em></li>
+			    <li>the expected value or <em>mean</em> of a random variable is the <em>center of mass</em> of its distribution</li>
+			    <li>is a measyre of its <em>central tendency</em></li>
+			    <li>intuitively: the <em>long-run avarage</em> value of repetitions of the experiment</li>
+			    <li>for <em>dicrete random</em> variables: <em>probability-weighted aaverage</em> of all possible values
+			    $$E[X] = \sum_{x}^{X} x \cdot P(x)$$</li>
+			    <li>for <em>continuos random</em> variables: sum is replaced by <em>integral</em>, and PMF by <em>PDF</em>
+			    $$E[X] = \int_{-\infty}^{\infty} x\cdot PDF(x) dx$$</li>   
+			    <li><em>doesn't exist</em> for random variables having distributions with <em>large "tails"</em>; e.g., Cuchy</li>
+			</ul>
+			
+			<article class="property">
+			    <h1>Constants</h1>
+			    <p>The expected value of a constant is equal to the constant itself, i.e, if \(c\) is a constant, then:
+			    $$E[c] = c$$</p>
+			</article>
+			
+			<article class="property">
+			    <h1>Monotonacity</h1>
+			    <p>If \(X\) and \(Y\) are random variables such that \(X \leq Y\) <span class="tooltip" title="in probability theory, one says that an event happens almos surely if it happens with probability one">almost surely</span>, then:
+			    $$E[X] \leq E[Y]$$</p>
+			</article>
+			
+			<article class="property">
+			    <h1>Linearity</h1>
+			    <p>The expected value operator \(E\) is linear in the sense that:
+			    $$\begin{array}{rll}
+			    E[X + c] & = & E[X] + c \\
+			    E[X + Y] & = & E[X] + E[Y] \\
+			    E[aX] & = & aE[X]
+			    \end{array}$$</p>
+			</article>
+			    
+		</article>
+		
+		<article class="subsection">
+		    <h1>Population mean vs sample mean</h1>
+		    <ul>
+		        <li><em>population</em> mean is the center of mass of population</li>
+		        <li><em>sample</em> mean is the center of mass of the <em>observed data</em></li>
+		        <li>sample mean is an <em>estimator</em> of population mean</li>
+		        <li><em>more data</em> into <em>sample mean</em>, more <em>concentrated</em> its PDF / PMF around <em>population mean</em></li>
+		        <li>sample mean is an <em>unbiased estimator</em>
+		            <ul>
+		                <li>the mean of its distribution is the mean trying to estimate</li>
+		            </ul>
+		            
+		        </li>
+		    </ul>
+		    
+		    <figure>
+		        <img src="media/SimExp.png" alt="alt-text" width="px" height="250px">
+		        <figcaption>PDF of experiment observations (blue) and distribution of 10-observation-mean avarage (salmon)</figcaption>
+		    </figure>
+		    
+		    <figure>
+		        <img src="media/DieRolls.png" alt="alt-text" width="px" height="250px">
+		        <figcaption>Die rolls. Single roll and n-rolls-avarage distribution s</figcaption>
+		    </figure>
+		    
+		</article>
+		
+		<article class="exercise">
+		    <h1>Expected value</h1>
+		    <ul>
+		        <li><a href="media/Expected.pdf" target="_blank">Expected value</a></li>
+		    </ul>
+		    
+		</article>
+		
+	</body>
+</html>	

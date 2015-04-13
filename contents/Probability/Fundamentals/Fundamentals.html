@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Fundamentals</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+		<script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+  				TeX: { equationNumbers: { autoNumber: "AMS" } }
+			});</script>
+		<link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+		<script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+		<script>hljs.initHighlightingOnLoad();</script>		
+	</head>
+	
+	<body class="kg-content">
+		<header>
+			<h1>Fundamentals</h1>
+		</header>
+		
+		<article class="subsection">
+			<h1>Probability, what is it?</h1>
+			<ul>
+			    <li>is a measure of the <em>likeliness</em> that an event will occur</li>
+			    <li>link the sample with the population</li>
+			    <li>quantify <span class="tooltip" title="how certain are we that the event will occur?">attitude</span> towards some proposition, whose truth we are not certain</li>
+			    <li><em>numerical measure</em> (between 0 and 1): 0 - impossibility, 1 - certainty</li>
+			    <li>given a random experiment, probability is a <span class="tooltip" title="intrinsec property of the phenomenon">population</span> quantity <em>summarizes</em> the <em>randomness</em></li>
+			</ul>
+			
+		</article>
+		
+		<article class="subsection">
+		    <h1>Random variable</h1>
+		    <ul>
+		        <li><em>numerical <b>outcome</b></em> of an experiment</li>
+		        <li>possible values represent the possible outcomes of a experiment</li>
+		        <li>or the "subjective" randomness that results from incomplete knowledge of a quantity</li>
+		        <li>also called <em>aleatory</em> variable or <em>stochastic</em> variable</li>
+		        
+		        <li>two principal varieties:</li>
+		    </ul>
+		    <table>
+		            <tbody>
+		                <tr>
+		                    <td><a href="" target="_self">discrete random variable</a></td>
+		                    <td>we talk about the <em>probability</em> that they <em>take specific values</em></td>
+		                </tr>
+		                <tr>
+		                    <td><a href="" target="_self">continuous random variable</a></td>
+		                    <td>we talk about the <em>probability</em> that they <em>line</em> within some <em>range</em></td>
+		                </tr>
+		            </tbody>
+		        </table>
+		    
+		</article>
+		
+		<article class="subsection">
+		    <h1>Sample space</h1>
+		    <ul>
+		        <li><em>set</em> of <em>all possible <b>outcomes</b></em> or results of a experiment or random trial</li>
+		        <li>usually denoted using set notation</li>
+		        <li>common to refer to a sample space by the labels \(S\) or \(\Omega\)</li>
+		        <li>\(U\) for <em>universal set</em></li>
+		    </ul>
+		        
+		</article>
+		
+		<article class="subsection">
+		    <h1>Event</h1>
+		    <ul>
+		        <li><em>set of <b>outcomes</b></em> of an experiment</li>
+		        <li>subset of the sample space</li>
+		        <li>has a <em>probability assigned</em></li>
+		        <li><em>complementary event (set)</em>: the event not occuring, defined for each event</li>
+		        <li><em>Bernoulli trial</em>: event + complementary event</li>
+		    </ul>
+		    
+		    <article class="property">
+			    <h1>Sum of probabilities</h1>
+			    <p>For any two events \(A\) and \(B\), the probability that at least one occurs:
+			    $$P(A \cup B) = P(A) + P(B)$$
+			    if \(A\) and \(B\) are <em>mutually exclusive</em>, or:
+			    $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
+			    if \(A\) and \(B\) are <em>NOT mutually exclusive</em>.</p>
+			</article>
+		    
+		</article>  
+		
+		<article class="subsection">
+		    <h1>Probability model</h1>
+		    <ul>
+		        <li>also known as <em>probabilistic space</em></li>
+		        <li>construct that models a real-world process (or experiment)</li>
+		        <li><em>link</em> the <em>sample</em> with the <em>population</em> using assumptions</li>
+		        <li>consist of three parts:</li>
+		    </ul>
+		    <table>
+		        <tbody>
+		            <tr>
+		                <td><b><a href="" target="_self">1. sample space</a></b></td>
+		                <td>set of all possible outcomes</td>
+		            </tr>
+		            <tr>
+		                <td><b><a href="" target="_self">2. set of events</a></b></td>
+		                <td><em>sigma algebra</em>; each containing zero or more outcomes</td>
+		            </tr>
+		            <tr>
+		                <td><b><a href="" target="_self">3. probability measure function</a></b></td>
+		                <td>a probability assigned to each event; a function \(P\) from events to probabilities</td>
+		            </tr>
+		        </tbody>
+		    </table>
+		    
+		</article>
+		
+		<article class="exercise">
+		    <h1></h1>
+		    <ul>
+		        <li><a href="media/BasicProb.pdf" target="_blank">Basic probability</a></li>
+		        <li><a href="media/SumProb.pdf" target="_blank">Sum of probabilities</a></li>
+		    </ul>
+		    
+		</article>
+		
+	</body>
+</html>	
