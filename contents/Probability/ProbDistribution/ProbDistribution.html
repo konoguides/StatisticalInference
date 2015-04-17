@@ -50,11 +50,11 @@
 		<article class="subsection">
 			<h1>Cumulative distribution function (CDF)</h1>
 			<ul>
-			    <li>returns probability that random variable \(X\) is \(\leq x\) some value
+			    <li>returns probability that random variable \(X\leq x\) some value
 			    $$F_X(x) = P(X \leq x)$$</li>
 			    <li>it gives the area under the PDF associated with \(X\), from \(-\infty\) to \(x\)</li>
 			    <li>also used to specify distribution of multivariate random variables</li>
-			    <li>also known simply as <em>distribution function</em></li>
+			    <li>known simply as <em>distribution function</em></li>
 			</ul>
 			
 		</article>
@@ -62,9 +62,11 @@
 		<article class="subsection">
 		    <h1>Survival functions</h1>
 		    <ul>
-		        <li>returns the probability that random variable \(X\) is \(\gt x\) value
+		        <li>returns the probability that random variable \(X \gt x\) value
 		        $$S_X(x) = P(X \gt x)$$</li>
-		        <li>is the inverse of CDF: \(S(x) = 1 - F(x)\)</li>
+		        <li>defined as the <em>complement to one of CDF</em>:
+		        $$S_X(x) = 1 - F_X(x)$$
+		        </li>
 		    </ul>
 		    
 		</article>

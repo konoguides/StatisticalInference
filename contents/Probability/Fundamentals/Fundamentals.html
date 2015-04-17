@@ -23,11 +23,15 @@
 		
 		<article class="subsection">
 			<h1>Probability, what is it?</h1>
+			
+			<article class="definition">
+			    <h1></h1>
+			    <p>Is a <em>numerical measure</em> (between 0 and 1) of the <em>likeliness</em> that an event will occur; where 0 - impossibility, 1 - certainty</p>
+			</article>
+			
 			<ul>
-			    <li>is a measure of the <em>likeliness</em> that an event will occur</li>
-			    <li>link the sample with the population</li>
+			    <li><em>link</em> the <em>sample</em> with the <em>population</em></li>
 			    <li>quantify <span class="tooltip" title="how certain are we that the event will occur?">attitude</span> towards some proposition, whose truth we are not certain</li>
-			    <li><em>numerical measure</em> (between 0 and 1): 0 - impossibility, 1 - certainty</li>
 			    <li>given a random experiment, probability is a <span class="tooltip" title="intrinsec property of the phenomenon">population</span> quantity <em>summarizes</em> the <em>randomness</em></li>
 			</ul>
 			
@@ -35,9 +39,13 @@
 		
 		<article class="subsection">
 		    <h1>Random variable</h1>
+		    
+		    <article class="definition">
+		        <h1></h1>
+		        <p><em>Numerical <b>outcome</b></em> of an experiment. It's pissible values represent the possible outcomes of a experiment</p>
+		    </article>
+		    
 		    <ul>
-		        <li><em>numerical <b>outcome</b></em> of an experiment</li>
-		        <li>possible values represent the possible outcomes of a experiment</li>
 		        <li>or the "subjective" randomness that results from incomplete knowledge of a quantity</li>
 		        <li>also called <em>aleatory</em> variable or <em>stochastic</em> variable</li>
 		        
@@ -60,10 +68,13 @@
 		
 		<article class="subsection">
 		    <h1>Sample space</h1>
+		    
+		    <article class="definition">
+		        <h1></h1>
+		        <p>The <em>set</em> \(\Omega\) &mdash;or \(S\)&mdash; of <em>all possible <b>outcomes</b></em> or results of a experiment or random trial</p>
+		    </article>
+		    
 		    <ul>
-		        <li><em>set</em> of <em>all possible <b>outcomes</b></em> or results of a experiment or random trial</li>
-		        <li>usually denoted using set notation</li>
-		        <li>common to refer to a sample space by the labels \(S\) or \(\Omega\)</li>
 		        <li>\(U\) for <em>universal set</em></li>
 		    </ul>
 		        
@@ -71,21 +82,32 @@
 		
 		<article class="subsection">
 		    <h1>Event</h1>
+		    
+		    <article class="definition">
+		        <h1></h1>
+		        <p><em>Set</em> \(E\) of <b>outcomes</b></em> of an experiment. Is a subset of the sample space \(\left(E \subset \Omega\right)\) and has a <em>probability assigned</em>.</p>
+		    </article>
+		    
 		    <ul>
-		        <li><em>set of <b>outcomes</b></em> of an experiment</li>
-		        <li>subset of the sample space</li>
-		        <li>has a <em>probability assigned</em></li>
 		        <li><em>complementary event (set)</em>: the event not occuring, defined for each event</li>
 		        <li><em>Bernoulli trial</em>: event + complementary event</li>
 		    </ul>
 		    
+		    <article class="definition">
+		        <h1>Event independence</h1>
+		        <p>Two events \(A\) and \(B\) are called <span class="tooltip" title="statistically unrelated from one and another">independent</span> if they are <em>mutually exclusive</em>, i.e. they have <em>no effect on each other</em>.</p>
+		        <p>\(A\) and \(B\) being independent events imply that the probability that both occurs is the product of the probability of each:
+		        $$P(A \cap B) = P(A)P(B)$$
+		        </p>
+		    </article>  
+		    
 		    <article class="property">
 			    <h1>Sum of probabilities</h1>
-			    <p>For any two events \(A\) and \(B\), the probability that at least one occurs:
+			    <p>For any two events \(A\) and \(B\), the probability that <em>at least one occurs</em>, <em>if</em> \(A\) and \(B\) are <em>independent</em> is:
 			    $$P(A \cup B) = P(A) + P(B)$$
-			    if \(A\) and \(B\) are <em>mutually exclusive</em>, or:
+			    but if \(A\) and \(B\) are <em>not independent</em> then:
 			    $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
-			    if \(A\) and \(B\) are <em>NOT mutually exclusive</em>.</p>
+			    </p>
 			</article>
 		    
 		</article>  

@@ -24,18 +24,36 @@
 		<article class="subsection">
 			<h1>Expected value</h1>
 			<ul>
-			    <li>denoted as \(E[X]\), and is a <em>property of distributions</em></li>
-			    <li>the expected value or <em>mean</em> of a random variable is the <em>center of mass</em> of its distribution</li>
-			    <li>is a measyre of its <em>central tendency</em></li>
+			    <li>also known as <em>mean</em>, is a <em>property of</em> random variable <em>distributions</em> denoted as \(E[X]\)</li>
+			    <li>is the <em>center of mass</em> of its distribution</li>
+			    <li>is a measure of its <em>central tendency</em></li>
 			    <li>intuitively: the <em>long-run avarage</em> value of repetitions of the experiment</li>
-			    <li>for <em>dicrete random</em> variables: <em>probability-weighted aaverage</em> of all possible values
-			    $$E[X] = \sum_{x}^{X} x \cdot P(x)$$</li>
-			    <li>for <em>continuos random</em> variables: sum is replaced by <em>integral</em>, and PMF by <em>PDF</em>
-			    $$E[X] = \int_{-\infty}^{\infty} x\cdot PDF(x) dx$$</li>   
-			    <li><em>doesn't exist</em> for random variables having distributions with <em>large "tails"</em>; e.g., Cuchy</li>
 			</ul>
 			
-			<article class="property">
+			<table>
+			    <tbody>
+			        <tr>
+			            <td><a href="" target="_self">dicrete random variables</a></td>
+			            <td>probability-weighted average of all possible values:
+			            $$E[X] = \sum_{x}^{X} x \cdot P(x)$$</td>
+			        </tr>
+			        <tr>
+			            <td><a href="" target="_self">continuos random variables</a></td>
+			            <td>sum is replaced by integral, and PMF by PDF:
+			            $$E[X] = \int_{-\infty}^{\infty} x\cdot PDF(x) dx$$</td>
+			        </tr>
+			        <tr>
+			            <td><a href="" target="_self">large "tails" distributions</a></td>
+			            <td>doesn't exist for random variables having this kind; e.g., Cuchy</td>
+			        </tr>
+			    </tbody>
+			</table>
+			    
+		</article>
+		
+		<article class="subsection">
+		    <h1>Properties</h1>
+		    <article class="property">
 			    <h1>Constants</h1>
 			    <p>The expected value of a constant is equal to the constant itself, i.e, if \(c\) is a constant, then:
 			    $$E[c] = c$$</p>
@@ -56,7 +74,6 @@
 			    E[aX] & = & aE[X]
 			    \end{array}$$</p>
 			</article>
-			    
 		</article>
 		
 		<article class="subsection">

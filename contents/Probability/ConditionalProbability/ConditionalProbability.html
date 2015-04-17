@@ -25,26 +25,22 @@
 		    
 			<article class="definition">
 		        <h1>Conditional probability</h1>
-		        <p>Le \(B\) be an event so that \(P(B) > 0\). Then the conditional probability of an event \(A\) given that \(B\) has occurred is:
+		        <p>Le \(B\) be an event so that \(P(B) > 0\). Then the conditional probability of an event \(A\) given that \(B\) has occurred, if \(A\) and \(B\) are <em>not independent</em> is:
 		        $$P(A | B) = \frac{P(A \cap B)}{P(B)}$$
-		        if \(A\) and \(B\) are <em>not independent</em>.</p>
+		        but if \(A\) and \(B\) are <em>independent</em>, it becomes:
+		        $$P(A|B) = P(A) \, \, \, \text{where} \, \, \, P(B)>0$$
+		        </p>
 		    </article>
 		    
-		    <article class="definition">
-		        <h1>Event independence</h1>
-		        <p>Event \(A\) is <span class="tooltip" title="statistically unrelated from one and another">independent</span> of event \(B\) if:
-		        $$P(A|B) = P(A) \, \, \, \text{where} \, \, \, P(B)>0$$
-		        equivalent to:
-		        $$P(A \cap B) = P(A)P(B)$$</p>
-		    </article>  
+		    
 		</article>
 		
 		<article class="subsection">
 		    <h1>IID random variables</h1>
 		    <ul>
 		        <li>said to be IID if they are <em>independent</em> and <em>identically distributed</em></li>
-		        <li><em>independent</em>: statistically unrelated from one and another</li>
-		        <li><em>identically distributed</em>: all having been drawn from the same population distribution</li>
+		        <li><b>independent</b>: statistically unrelated from one and another</li>
+		        <li><b>identically distributed</b>: all having been drawn from the same population distribution</li>
 		        <li>are the <em>default model</em> for random samples</li>
 		    </ul>
 		    
@@ -53,16 +49,16 @@
 		
 		
 		<article class="exercise">
-		    <h1>Rolling conditional dice</h1>
-		    <p>The probability of getting a 1 rolling a standar dice is assumed to be \(\frac{1}{6}\). Suppose you're given the extra information that the die roll was and odd number, hence 1, 3, or 5.</p>
-		    <p><em>Conditional</em> on this new information, what is the probability of getting a 1?</p>
+		    <h1>Conditional probability rolling a dice</h1>
+		    <p>The probability of getting a 3 rolling a standar dice is assumed to be \(\frac{1}{6}\). Suppose you're given the extra information that the die roll was and odd number, hence 1, 3, or 5.</p>
+		    <p><em>Conditional</em> on this new information, what is the probability of getting a 3?</p>
 		    <h2></h2>
 		    <!-- solution -->
-		    <p>$$A=\{1\}; \, \, \, \, B=\{1,3,5\}$$
-		    $$A \cap B = \{1\}$$</p>
-		    <p>$$P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(\{1\})}{P(\{1,3,5\})} = \frac{1/6}{3/6} \,\,\, \therefore $$
+		    <p>$$A=\{3\}; \, \, \, \, B=\{1,3,5\}$$
+		    $$A \cap B = \{3\}$$</p>
+		    <p>$$P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(\{3\})}{P(\{1,3,5\})} = \frac{1/6}{3/6} \,\,\, \therefore $$
 		    <br>
-		    $$P(\text{one given that roll is odd}) = P(A|B) = \frac{1}{3}$$</p>
+		    $$P(\text{three given that roll is odd}) = P(A|B) = \frac{1}{3}$$</p>
 		</article>  
 		
 		<article class="subsection">
@@ -70,10 +66,43 @@
 		    <ul>
 		        <li>allows to <em>reverse</em> the <em>role of events</em> involved in conditional probability</li>
 		        <li>relates \(P(B|A)\) with \(P(A|B)\)</li>
+		        <li>given that if \(A\) and \(B\) are not independent:</li>
 		    </ul>
 		    
-		    <p>$$P(B|A) = \frac{P(A|B)P(B)}{P(A|B)P(B)+P(A|B^c)P(B^c)}$$
-		    where:</p>
+		    <p>
+		    $$\begin{equation}
+                P(A | B) = \frac{P(A \cap B)}{P(B)}
+                \label{eq:one}
+            \end{equation}$$
+            and,
+            $$\begin{equation}
+                P(B | A) = \frac{P(A \cap B)}{P(A)},
+                \label{eq:two}
+            \end{equation}$$
+            from \eqref{eq:one} we an obtain:
+            $$\begin{equation}
+                P(A \cap B) = P(A | B) * P(B)
+                \label{eq:three}
+            \end{equation}$$
+            and substitude it on \eqref{eq:two}, we get:
+            $$\begin{equation}
+                P(B | A) = \frac{P(B)}{P(A)} P(A | B)
+                \label{eq:four}
+            \end{equation}$$
+            Please not that \(P(A)\) can be rewritted as:
+            $$\begin{equation}
+                P(A) = P(A \cap B) + P(A \cap B^c)
+                \label{eq:five}
+            \end{equation}$$
+            using \eqref{eq:three} on \eqref{eq:five} we have:
+            $$\begin{equation}
+                P(A) = P(A | B) * P(B) + P(A | B^c) * P(B^c)
+                \label{eq:six}
+            \end{equation}$$
+            finally changing \(P(A)\) from \eqref{eq:four} by \eqref{eq:six}, we end up with the <em>Baye's rule</em>
+		    </p>
+            <p class="conclusion">$$P(B|A) = \frac{P(A|B) * P(B)}{P(A|B) * P(B)+P(A|B^c) * P(B^c)}$$</p>
+            <p>where:</p>
 		    <ul>
 		        <li>\(P(A|B^c) = 1 - P(A^c|B^c)\)</li>
 		        <li>\(P(B^c) = 1 - P(B)\)</li>
