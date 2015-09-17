@@ -32,6 +32,8 @@
 		        </p>
 		    </article>
 		    
+		    <article class="idea">It is always useful to draw the <em>true table</em></article>
+		    
 		    
 		</article>
 		
@@ -62,10 +64,29 @@
 		</article>  
 		
 		<article class="subsection">
+		    <h1>Total probability of a non-independent event</h1>
+		    <p>Given:</p>
+		    <ul>
+		        <li>\(P(A)\)</li>
+		        <li>\(P(A|B)\)</li>
+		        <li>\(P(A|¬B)\)</li>
+		    </ul>
+		    <p>the <em>total probability</em> of \(A\) is:
+		    $$P(A) = P(A|B) * P(B) + P(A|¬B) * P(¬B)$$</p>
+		    
+		    <article class="note">\(¬B = B^{c}\)</article>
+		</article>
+		
+		<article class="subsection">
 		    <h1>Baye's rule</h1>
 		    <ul>
 		        <li>allows to <em>reverse</em> the <em>role of events</em> involved in conditional probability</li>
 		        <li>relates \(P(B|A)\) with \(P(A|B)\)</li>
+		        <li>semantically: rule <em>incorporates new evidence</em> into prior probability to arrive a <b>posterior probability</b></li>
+		        <figure>
+		            <img src="media/BayesProb.png" alt="alt-text" width="350px" height="px">
+		            <figcaption></figcaption>
+		        </figure>
 		        <li>given that if \(A\) and \(B\) are not independent:</li>
 		    </ul>
 		    
@@ -76,12 +97,12 @@
             \end{equation}$$
             and,
             $$\begin{equation}
-                P(B | A) = \frac{P(A \cap B)}{P(A)},
+                P(B | A) = \frac{P(B \cap A)}{P(A)} = \frac{P(A \cap B)}{P(A)},
                 \label{eq:two}
             \end{equation}$$
-            from \eqref{eq:one} we an obtain:
+            from \eqref{eq:one} <span class="tooltip" title="non-normalized posterior probability; probability that the two events occur at the same time">(join probability)</span> we an obtain:
             $$\begin{equation}
-                P(A \cap B) = P(A | B) * P(B)
+                P(A \cap B) = P(B, A) = P(A | B) * P(B)
                 \label{eq:three}
             \end{equation}$$
             and substitude it on \eqref{eq:two}, we get:
@@ -99,7 +120,7 @@
                 P(A) = P(A | B) * P(B) + P(A | B^c) * P(B^c)
                 \label{eq:six}
             \end{equation}$$
-            finally changing \(P(A)\) from \eqref{eq:four} by \eqref{eq:six}, we end up with the <em>Baye's rule</em>
+            finally changing \(P(A)\) from \eqref{eq:four} by \eqref{eq:six}, we end up with the <em>Baye's rule</em>, which is the <b>posterior probability</b>, where the denominator \(P(A)\) corresponds to the <em>normalizer</em> because it represents the <em>total probability</em> of the \(A\) event
 		    </p>
             <p class="conclusion">$$P(B|A) = \frac{P(A|B) * P(B)}{P(A|B) * P(B)+P(A|B^c) * P(B^c)}$$</p>
             <p>where:</p>
@@ -114,6 +135,11 @@
 		<article class="exercise">
 		    <h1>Baye's rule</h1>
 		    <ul>
+		        <li><a href="media/PriorPosterior.png" target="_blank">Prior, join, normalizer &amp; posterior probability</a></li>
+		        <figure>
+		            <img src="media/PriorPosterior.png" alt="alt-text" width="px" height="300px">
+		            <figcaption></figcaption>
+		        </figure>
 		        <li><a href="media/CondProb.pdf" target="_blank">Medical tests</a></li>
 		    </ul>
 		    
