@@ -65,13 +65,7 @@
 		
 		<article class="subsection">
 		    <h1>Total probability of a non-independent event</h1>
-		    <p>Given:</p>
-		    <ul>
-		        <li>\(P(A)\)</li>
-		        <li>\(P(A|B)\)</li>
-		        <li>\(P(A|¬B)\)</li>
-		    </ul>
-		    <p>the <em>total probability</em> of \(A\) is:
+		    <p>Given \(P(B)\), \(P(A|B)\) and \(P(A|¬B)\) the <em>total probability</em> of \(A\) is:
 		    $$P(A) = P(A|B) * P(B) + P(A|¬B) * P(¬B)$$</p>
 		    
 		    <article class="note">\(¬B = B^{c}\)</article>
@@ -82,7 +76,7 @@
 		    <ul>
 		        <li>allows to <em>reverse</em> the <em>role of events</em> involved in conditional probability</li>
 		        <li>relates \(P(B|A)\) with \(P(A|B)\)</li>
-		        <li>semantically: rule <em>incorporates new evidence</em> into prior probability to arrive a <b>posterior probability</b></li>
+		        <li>semantically: rule <span class="tooltip" title="cartainty on event A occurrence: P(A)">incorporates new evidence</span> into <span class="tooltip" title="P(A|B) and P(A|¬B)">prior probability</span> to arrive a <span class="tooltip" title="P(B|A)">posterior probability</span></li>
 		        <figure>
 		            <img src="media/BayesProb.png" alt="alt-text" width="350px" height="px">
 		            <figcaption></figcaption>
