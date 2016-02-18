@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Quantiles and percentiles</title>
+		<title>Quantiles &amp; percentiles</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
@@ -18,7 +18,7 @@
 	
 	<body class="kg-content">
 		<header>
-			<h1>Quantiles and percentiles</h1>
+			<h1>Quantiles &amp; percentiles</h1>
 		</header>
 		
 		<article class="subsection">
@@ -49,6 +49,17 @@
 		    <ul>
 		        <li>simply a <em>quantile</em> with <em>\(\alpha\)</em> expressed <em>as percent</em></li>
 		    </ul>
+		    
+		    <h2 id="">percentiles with Python</h2>
+		    <pre><code>>>> import numpy as np
+>>>
+>>> data = [1, 3, 4, 2, 5, 6]
+>>> np.percentile(data, 25)
+2.25
+>>> np.percentile(data, 50)
+3.5
+>>> np.percentile(data, 75)
+4.75</code></pre>
 		    
 		</article>
 		
@@ -90,22 +101,6 @@
 		    <h1>Quantiles</h1>
 		    <ul>
 		        <li><a href="media/Quantiles.pdf" target="_blank">median</a></li>
-		    </ul>
-		    
-		</article>  
-		
-		<article class="subsection">
-		    <h1><span class="textmarker">Python</span> - quantiles</h1>
-		    <p></p>
-		</article>
-		
-		<article class="subsection">
-		    <h1><span class="textmarker">R</span> - quantiles</h1>
-		    <ul>
-		        <li>inverse cumulative distribution functions <em>begin</em> with <em><code>q</code></em></li>
-		        <li>for exaple the <i>beta distribution</i>:
-		        <pre><code>qbeta(0.5,2,1)</code></pre>
-		        </li>
 		    </ul>
 		    
 		</article>

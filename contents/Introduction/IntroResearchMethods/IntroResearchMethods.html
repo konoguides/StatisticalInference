@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Intro to statistical research methods</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+        <script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });</script>
+        <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body class="kg-content">
+        <header>
+            <h1>Intro to statistical research methods</h1>
+        </header>
+
+        <article class="subsection">
+            <h1>Kinds of studies</h1>
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td width="50%" style="color: #2878A2; font-weight: bold; font-size: 120%; text-align: center;">Observational</td>
+                        <td width="50%" style="color: #2878A2; font-weight: bold; font-size: 120%; text-align: center;">Experimental</td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: top;">Experimenter only observes, does not introduce any treatment.</td>
+                        <td>Experimenter introduce treatments to manipulate explanatory variables and measure response variables.</td>
+                    </tr>
+                    <tr>
+                        <td><ul>
+                            <li><span class="tooltip" title="can only establish association between variables, not causation">establish correlation</span></li>
+                            <li><em>unless</em> using <span class="tooltip" title="advance inference methods that allow for making causal inference from observational studies">causal inference</span></li>
+                            <li><em>retrospective</em>: use past data</li>
+                            <li><em>prospective</em>: data collected throughout the study</li>
+                        </ul>
+                        </td>
+                        <td style="vertical-align: top;"><ul>
+                            <li><span class="tooltip" title="establish causal connections between explanatory and response variables">show causation</span></li>
+                            <li>randomly assign subjects to treatments</li>
+                        </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 id="">principles of experimental design</h2>
+            
+            <table width="100%">
+		        <tbody>
+		            <tr>
+		                <td><b><a href="" target="_self">1. Control</a></b></td>
+		                <td>compare treatment of interest to a <em>control group</em></td>
+		            </tr>
+		            <tr>
+		                <td><b><a href="" target="_self">2. Randomize</a></b></td>
+		                <td>randomly assign subjects to treatments</td>
+		            </tr>
+		            <tr>
+		                <td><b><a href="" target="_self">3. Replicate</a></b></td>
+		                <td>collect a sufficiently large sample, or replicate the entire study</td>
+		            </tr>
+		            <tr>
+		                <td><b><a href="" target="_self">4. Blocking</a></b></td>
+		                <td>block for variables known or suspect to affect the outcome</td>
+		            </tr>
+		        </tbody>
+		    </table>
+        </article>
+
+        <article class="subsection">
+            <h1>Results validity factors</h1>
+            <p>Here are some of the most relevant factors that influence the validity of a research's results:</p>
+            
+            <ol>
+                <li><b>Sample size</b>: good sample size is needed to infer valid conclusions</li>
+                <li><b>Representative sample</b>: <i>who i surveyed</i></li>
+                <li><b>Solid methodology</b>: <i>how the survey was conducted</i></li>
+            </ol>
+        </article>
+        
+        <article class="subsection">
+            <h1>Experimentation definitions</h1>
+            
+            <article class="definition">
+                <h1>Treatment</h1>
+                <p>The factor (also called an independent variable) is an explanatory variable manipulated by the experimenter. Each factor has two or more levels, i.e., different values of the factor. Combinations of factor levels are called treatments</p>
+            </article>
+            
+            <article class="definition">
+                <h1>Independent variable</h1>
+                <p>A.k.a <em>explanatory</em> variable, is the variable that experimenters choose to <em>manipulate</em>, because it's thought to be responsible for direct changes in the system under study.</p>
+            </article>
+            
+            <article class="definition">
+                <h1>Dependent variable</h1>
+                <p>A.k.a <em>response</em> variable, is the variable that experimenters choose to <em>measure</em> during an experiment, because it reflects the state of the system under study.</p>
+            </article>
+            
+            <article class="definition">
+                <h1>Blocking variables</h1>
+                <p>Variables that may affect the measured result, but are not of primary interest. Characteristics that the experimental units come with, e.g. gender. Taken into account to stratify the experiment can contribute to decrease bias.</p>
+                
+                <p>When we can control nuisance factors, an important technique known as <a href="media/drug_x_randomized_block_design.jpg" target="_blank">blocking</a> can be used to reduce or eliminate the contribution to experimental error contributed by nuisance factors.</p>
+            </article>
+            
+            <article class="definition">
+                <h1>Treatment group</h1>
+                <p>The group of a study that receives varying levels of the independent variable. These groups are used to measure the effect of a treatment.</p>
+            </article>
+            
+            <article class="definition">
+                <h1>Control group</h1>
+                <p>The group of a study that receives no treatment. This group is used as a baseline when comparing treatment groups.</p>
+            </article>
+            
+            <article class="definition">
+                <h1>Placebo</h1>
+                <p>Something given to subjects in the control group so they think
+they are getting the treatment, when in reality they are getting something that causes no effect to them.</p>
+            </article>
+            
+            <article class="definition">
+                <h1>Blinding</h1>
+                <p>Blinding is a technique used to reduce bias. Double blinding ensures that both those administering treatments and those receiving treatments do not know who is receiving which treatment</p>
+            </article>
+            
+        </article>
+
+    </body>
+</html>

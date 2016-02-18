@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>About statistics &amp; inference</title>
+		<title>Statistical inference overview</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
@@ -18,7 +18,7 @@
 	
 	<body class="kg-content">
 		<header>
-			<h1>About statistics &amp; inference</h1>
+			<h1>Statistical inference overview</h1>
 		</header>
 		
 		<article class="subsection">
@@ -29,23 +29,37 @@
 		        <li><em>look at data</em> &rightarrow; most importatnt thing statistician do</li>
 		    </ul>
 		    
+		    <h2 id="">population vs sample</h2>
+		    
+		    <article class="definition">
+		        <h1>Population</h1>
+		        <p>The population is the set of <em>all</em> the individuals in a group</p>
+		    </article>
+		    
+		    <article class="definition">
+		        <h1>Sample</h1>
+		        <p>The sample is <em>some</em> of the individuals in a group</p>
+		    </article>
+		    
+		    <article class="definition">
+		        <h1>Parameter vs statistic</h1>
+		        <p>A <em>parameter</em> defines a <em>characteristic of the population</em> whereas a <em>statistic</em> defines a characteristic of the sample.</p>
+		    </article>
 		</article>
 		
 		<article class="subsection">
 		    <h1>Statistical inference</h1>
 		    <ul>
-		        <li>the process of drawing <em>conclusions</em> about a <em>population</em> from noist sample (data)</li>
+		        <li>process of <span class="tooltip" title="inferring facts or create new knowledge">drawing conclusions</span> about a <em>population</em> from noisy uncertain sample (data)</li>
 		        <li>noisy data &rightarrow; subject to random <em>variation</em> (observational errors or sampling)</li>
-		        <li>need to <em>quantify uncertainty</em> associated with conclude from incomplete data that may <em>change</em> over time</li>
-		        <li>drawing conclusions &rightarrow; <em>inferring facts</em></li>
-		        <li>create <b>new knowledge</b> from noisy uncertain data</li>
+		        <li>need to <em>quantify uncertainty</em> associated with incomplete data that may <em>change</em> over time</li>
 		    </ul>
 		    
 		    <h2 id="">in practice</h2>
 		    <ul>
 		        <li>used to test <em>hypotheses</em> and make <em>estimations</em> from sample data</li>
-		        <li>be <em>able</em> to explore relationships between variables to make <em>informed decisions</em></li>
-		        <li>answers the questions: <em>what should be done next?</em></li>
+		        <li>be <em>able</em> to explore relationships between variables to make <b>informed decisions</b></li>
+		        <li><em>answers</em> the questions: <b>what should be done next?</b></li>
 		        <li><em>descriptive statistics</em> describe a sample; <em>inferential statistics</em> infer <em>predictions</em> about populations</li>
 		    </ul>
 		    
@@ -54,14 +68,22 @@
 		
 		<article class="subsection">
 		    <h1>Statistical propositions</h1>
-		    <ul>
-		        <li><em>statistical proposition</em>: <em>conclusion</em> of a <!--statistical--> inference system</li>
-		        <li><em>inference</em> system or <em>inductive</em> system should produce reasonable and <span class="tooltip" title="applicable to a range of situations">general</span> answers</li>
-		        <li><em>forms</em> of statistical proposition:</li>
-		    </ul>
 		    
-		    <table>
+		    <article class="definition">
+		        <h1>Inference system</h1>
+		        <p>System that <em>produce reasonable and</em> <span class="tooltip" title="applicable to a range of situations">general</span> <em>answers</em>. A.k.a inductive system.</p>
+		    </article>
+		    
+		    <article class="definition">
+		        <h1>Statistical proposition</h1>
+		        <p><em>Conclusion</em> of a inference system</p>
+		    </article>
+		    
+		    <table width="100%">
 		        <tbody>
+		            <tr>
+		                <td colspan="2" style="color: #2878A2; font-weight: bold;">Statistical proposition forms</td>
+		            </tr>
 		            <tr>
 		                <td><a href="" target="_self">estimate</a></td>
 		                <td>value that best approximates some parameter of interest</td>
@@ -89,37 +111,38 @@
 		
 		<article class="subsection">
 		    <h1>Styles of inference</h1>
-		    <p>Different thinking about probability leads to different styles of inference.</p>
-		    <dl>
-		        <dt>Frequency:</dt>
-		            <dd>
-		            <table>
-		                <tbody>
-		                    <tr>
-		                        <td><i>probability</i></td>
-		                        <td><em>long run <b>proportion</b></em> of times an event occurs; independent, identically distributed repetitions</td>
-		                    </tr>
-		                    <tr>
-		                        <td><i>inference</i></td>
-		                        <td>uses <em>frequency</em> probability <em>interpretations</em> to control error rates; "What should I decide given my data <em>controlling</em> the <em>long run proportion</em> of mistakes I make at a tolerable level."</td>
-		                    </tr>
-		                </tbody>
-		            </table>
-		            </dd>
-		        <dt>Bayesian:</dt>
-		            <dd><table>
-		                <tbody>
-		                    <tr>
-		                        <td><i>probability</i></td>
-		                        <td>probability calculus of <em>beliefs</em>; given that beliefs follow certain rules</td>
-		                    </tr>
-		                    <tr>
-		                        <td><i>inference</i></td>
-		                        <td>uses Bayesian probability representation of <em>beliefs</em> to perform <em>inference</em>; "Given my subjective beliefs and the objective information from the data, <em>what</em> should I <em>believe now</em>?"</td>
-		                    </tr>
-		                </tbody>
-		            </table></dd>
-		    </dl>
+		    
+		    <ul>
+		        <li>Different thinking about probability leads to different styles of inference.</li>
+		    </ul>
+		    
+		    <table width="100%">
+		        <caption></caption>
+		        <tbody>
+		            <tr>
+		                <td colspan="2" style="color: #2878A2; font-weight: bold;">Frequency oriented</td>
+		            </tr>
+		            <tr>
+                        <td><i><a href="" target="_self">probability</a></i></td>
+                        <td><em>long run <b>proportion</b></em> of times an event occurs; independent, identically distributed repetitions</td>
+                    </tr>
+                    <tr>
+                        <td><i><a href="" target="_self">inference</a></i></td>
+                        <td>uses <em>frequency</em> probability <em>interpretations</em> to control error rates; "What should I decide given my data <em>controlling</em> the <em>long run proportion</em> of mistakes I make at a tolerable level."</td>
+                    </tr>
+		            <tr>
+		                <td colspan="2" style="color: #2878A2; font-weight: bold;">Bayesian oriented</td>
+		            </tr>
+		            <tr>
+                        <td><i><a href="" target="_self">probability</a></i></td>
+                        <td>probability calculus of <em>beliefs</em>; given that beliefs follow certain rules</td>
+                    </tr>
+                    <tr>
+                        <td><i><a href="" target="_self">inference</a></i></td>
+                        <td>uses Bayesian probability representation of <em>beliefs</em> to perform <em>inference</em>; "Given my subjective beliefs and the objective information from the data, <em>what</em> should I <em>believe now</em>?"</td>
+                    </tr>
+		        </tbody>
+		    </table>
 		</article>
 		
 		<article class="subsection">
@@ -135,12 +158,11 @@
 		
 		<article class="subsection">
 		    <h1>Statistical inference tools</h1>
-			<p>Some of the tools used in the trade of statistical inference are:</p>
 			
-			<table>
+			<table width="100%">
 			    <tbody>
 			        <tr>
-			            <td><a href="" target="_self">Randomization</a></td>
+			            <td width="35%"><a href="" target="_self">Randomization</a></td>
 			            <td>balancing unobserved variables that may confound inferences of</td>
 			        </tr>
 			        <tr>
@@ -172,7 +194,7 @@
 			            <td>use the data to, with minimal probability model assumptions, create inferences</td>
 			        </tr>
 			        <tr>
-			            <td><a href="" target="_self">Permutation, randomization and exchangeability testing</a></td>
+			            <td style="text-align: left;"><a href="" target="_self">Permutation, randomization and exchangeability testing</a></td>
 			            <td>use data permutations to perform inferences</td>
 			        </tr>
 			        

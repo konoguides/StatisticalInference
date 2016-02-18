@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Conditional probability</title>
+		<title>Conditional &amp; total probability</title>
 		<link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
@@ -18,7 +18,7 @@
 	
 	<body class="kg-content">
 		<header>
-			<h1>Conditional probability</h1>
+			<h1>Conditional &amp; total probability</h1>
 		</header>
 		
 		<article class="subsection">
@@ -69,75 +69,233 @@
 		    $$P(A) = P(A|B) * P(B) + P(A|¬B) * P(¬B)$$</p>
 		    
 		    <article class="note">\(¬B = B^{c}\)</article>
-		</article>
-		
-		<article class="subsection">
-		    <h1>Baye's rule</h1>
-		    <ul>
-		        <li>allows to <em>reverse</em> the <em>role of events</em> involved in conditional probability</li>
-		        <li>relates \(P(B|A)\) with \(P(A|B)\)</li>
-		        <li>semantically: rule <span class="tooltip" title="cartainty on event A occurrence: P(A)">incorporates new evidence</span> into <span class="tooltip" title="P(A|B) and P(A|¬B)">prior probability</span> to arrive a <span class="tooltip" title="P(B|A)">posterior probability</span></li>
-		        <figure>
-		            <img src="media/BayesProb.png" alt="alt-text" width="350px" height="px">
-		            <figcaption></figcaption>
-		        </figure>
-		        <li>given that if \(A\) and \(B\) are not independent:</li>
-		    </ul>
 		    
-		    <p>
-		    $$\begin{equation}
-                P(A | B) = \frac{P(A \cap B)}{P(B)}
-                \label{eq:one}
-            \end{equation}$$
-            and,
-            $$\begin{equation}
-                P(B | A) = \frac{P(B \cap A)}{P(A)} = \frac{P(A \cap B)}{P(A)},
-                \label{eq:two}
-            \end{equation}$$
-            from \eqref{eq:one} <span class="tooltip" title="non-normalized posterior probability; probability that the two events occur at the same time">(join probability)</span> we an obtain:
-            $$\begin{equation}
-                P(A \cap B) = P(B, A) = P(A | B) * P(B)
-                \label{eq:three}
-            \end{equation}$$
-            and substitude it on \eqref{eq:two}, we get:
-            $$\begin{equation}
-                P(B | A) = \frac{P(B)}{P(A)} P(A | B)
-                \label{eq:four}
-            \end{equation}$$
-            Please not that \(P(A)\) can be rewritted as:
-            $$\begin{equation}
-                P(A) = P(A \cap B) + P(A \cap B^c)
-                \label{eq:five}
-            \end{equation}$$
-            using \eqref{eq:three} on \eqref{eq:five} we have:
-            $$\begin{equation}
-                P(A) = P(A | B) * P(B) + P(A | B^c) * P(B^c)
-                \label{eq:six}
-            \end{equation}$$
-            finally changing \(P(A)\) from \eqref{eq:four} by \eqref{eq:six}, we end up with the <em>Baye's rule</em>, which is the <b>posterior probability</b>, where the denominator \(P(A)\) corresponds to the <em>normalizer</em> because it represents the <em>total probability</em> of the \(A\) event
-		    </p>
-            <p class="conclusion">$$P(B|A) = \frac{P(A|B) * P(B)}{P(A|B) * P(B)+P(A|B^c) * P(B^c)}$$</p>
-            <p>where:</p>
-		    <ul>
-		        <li>\(P(A|B^c) = 1 - P(A^c|B^c)\)</li>
-		        <li>\(P(B^c) = 1 - P(B)\)</li>
-		    </ul>
-		    
-		    
+		    <article class="example">
+		        <h1>Medical example</h1>
+		        <p>Consider the next info about the probability of have a disease, and that related with the test effectiveness:
+		        $$P(DISEASE) = 0.1 \hspace{2cm} P(¬DISEASE)=0.9$$
+		        $$\begin{array}{c|c}
+		            P(POS | DISEASE) = 0.9 & P(NEG | DISEASE) = 0.1 \\
+		            P(POS | ¬DISEASE) = 0.2 & P(NEG | ¬DISEASE) = 0.8
+		        \end{array}$$
+		        The next table illustrates the probability associated to each combination of having or not the disease, and obtaining a positive or negative result in the test:</p>
+		        <table>
+		            <caption></caption>
+		            <thead>
+		                <tr>
+		                    <th>DISEASE</th>
+		                    <th>TEST</th>
+		                    <th>P(·)</th>
+		                    <th></th>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr>
+		                    <td>Y</td>
+		                    <td><em>POS</em></td>
+		                    <td><em>0.09</em></td>
+		                    <td>\(P(POS | DISEASE) \cdot P(DISEASE)\)</td>
+		                </tr>
+		                <tr>
+		                    <td>Y</td>
+		                    <td>NEG</td>
+		                    <td>0.01</td>
+		                    <td>\(P(NEG | ¬DISEASE) \cdot P(DISEASE)\)</td>
+		                </tr>
+		                <tr>
+		                    <td>N</td>
+		                    <td><em>POS</em></td>
+		                    <td><em>0.18</em></td>
+		                    <td>\(P(POS | ¬DISEASE) \cdot P(¬DISEASE)\)</td>
+		                </tr>
+		                <tr>
+		                    <td>N</td>
+		                    <td>NEG</td>
+		                    <td>0.72</td>
+		                    <td>\(P(NEG | ¬DISEASE) \cdot P(¬DISEASE)\)</td>
+		                </tr>
+		            </tbody>
+		          <tfoot>
+		                <tr>
+		                    <th></th>
+		                    <th>\(\sum = \)</th>
+		                    <th><b>1.00</b></th>
+		                    <th></th>
+		                </tr>
+		            </tfoot>
+		        </table>
+		        <br>
+		        <p>To obtain the <em>total probability of obtain a POSITIVE result</em> on the test, we arrange the info as:
+		        $$\begin{array}{ccl}
+		            P(POS) & = & P(POS | DISEASE) \cdot P(DISEASE) + P(POS | ¬DISEASE) \cdot P(¬DISEASE) \\
+		            & = & 0.9 \cdot 0.1 + 0.2 \cdot 0.9 \\
+		            & = & 0.27
+		        \end{array}$$
+		        $$\boxed{P(\text{POSITIVE RESULT}) = 0.27}$$
+		        Which corresponds to the <em>sum</em> of the <em>first and third row</em> of the table.</p>
+		    </article>
 		</article>
 		
 		<article class="exercise">
-		    <h1>Baye's rule</h1>
-		    <ul>
-		        <li><a href="media/PriorPosterior.png" target="_blank">Prior, join, normalizer &amp; posterior probability</a></li>
-		        <figure>
-		            <img src="media/PriorPosterior.png" alt="alt-text" width="px" height="300px">
-		            <figcaption></figcaption>
-		        </figure>
-		        <li><a href="media/CondProb.pdf" target="_blank">Medical tests</a></li>
-		    </ul>
+		    <h1>Two coin</h1>
+		    <p>Consider a bag with two coins. It is known that <b>coin 1</b> <em>is fair</em>, i.e, \(P_1(H)=P(H|1)=0.5\), but <b>coin 2</b> <em>is loaded</em> in a way that \(P_2(H)=P(H|¬1)=0.9\). The probability of pick any of the two coins from the bag is the same, so \(P(1)=0.5\) and \(P(2)=P(¬1)=0.5\)</p>
 		    
+		    <figure>
+		        <img src="media/TwoCoins1.png" alt="alt-text" width="350px" height="px">
+		        <figcaption></figcaption>
+		    </figure>
+		    
+		    <p><b>Determine</b> the probability of get a head on the first flip, if you pick one coin of the bag.</p>
+		    <h2></h2>
+		    <!-- solution -->
+		    <p>Using the total probability definition we have:
+		    $$\begin{array}{ccl}
+		        P(H) & = & P(H|1) \cdot P(1) + P(H|¬1) \cdot P(¬1) \\
+		        & = & 0.5 \cdot 0.5 + 0.9 \cdot 0.5 \\
+		        & = & 0.25 + 0.45 \\
+		        & = & 0.7 
+		    \end{array}$$
+		    $$\boxed{P(H) = 0.7}$$</p>
+		    <p>Which can also be obtained from the truth table:</p>
+		    
+		    <table>
+		        <caption></caption>
+		        <thead>
+		            <tr>
+		                <th>Pick</th>
+		                <th>Flip</th>
+		                <th>\(P(·)\)</th>
+		                <th></th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr>
+		                <td>1</td>
+		                <td><em>H</em></td>
+		                <td><em>0.25</em></td>
+		                <td>\(P(H|1) \cdot P(1)\)</td>
+		            </tr>
+		            <tr>
+		                <td>1</td>
+		                <td>T</td>
+		                <td>0.25</td>
+		                <td>\(P(T|1) \cdot P(1)\)</td>
+		            </tr>
+		            <tr>
+		                <td>2</td>
+		                <td><em>H</em></td>
+		                <td><em>0.45</em></td>
+		                <td>\(P(H|¬1) \cdot P(¬1)\)</td>
+		            </tr>
+		            <tr>
+		                <td>2</td>
+		                <td>T</td>
+		                <td>0.05</td>
+		                <td>\(P(T|¬1) \cdot P(¬1)\)</td>
+		            </tr>
+		        </tbody>
+		      <tfoot>
+		            <tr>
+		                <th></th>
+		                <th>\(\sum =\)</th>
+		                <th>1.0</th>
+		                <th></th>
+		            </tr>
+		        </tfoot>
+		    </table>
 		</article>
+		
+		<article class="exercise">
+		    <h1>Two coins, two flips</h1>
+		    <p>Considering the coins of the previous exercise. <b>Determine</b> the probability of picking a coin, and fliping it twice, see first a head (H)followed by a tail(T).</p>
+		    <figure>
+		        <img src="media/TwoCoinsTwoFlips.png" alt="alt-text" width="450px" height="px">
+		        <figcaption></figcaption>
+		    </figure>
+		    
+		    <h2></h2>
+		    <!-- solution -->
+		    <p>Using a truth table for the case we have:</p>
+		    <table>
+		        <caption></caption>
+		        <thead>
+		            <tr>
+		                <th>Pick</th>
+		                <th>Flip 1</th>
+		                <th>Flip 2</th>
+		                <th>P(·)</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr>
+		                <td>1</td>
+		                <td>H</td>
+		                <td>H</td>
+		                <td></td>
+		            </tr>
+		            <tr>
+		                <td>1</td>
+		                <td>H</td>
+		                <td>T</td>
+		                <td>\(0.5 \cdot 0.5 \cdot 0.5 = 0.125\)</td>
+		            </tr>
+		            <tr>
+		                <td>1</td>
+		                <td>T</td>
+		                <td>H</td>
+		                <td></td>
+		            </tr>
+		            <tr>
+		                <td>1</td>
+		                <td>T</td>
+		                <td>T</td>
+		                <td></td>
+		            </tr>
+		            <tr>
+		                <td>2</td>
+		                <td>H</td>
+		                <td>H</td>
+		                <td></td>
+		            </tr>
+		            <tr>
+		                <td>2</td>
+		                <td>H</td>
+		                <td>T</td>
+		                <td>\(0.5 \cdot 0.9 \cdot 0.1 = 0.045\)</td>
+		            </tr>
+		            <tr>
+		                <td>2</td>
+		                <td>T</td>
+		                <td>H</td>
+		                <td></td>
+		            </tr>
+		            <tr>
+		                <td>2</td>
+		                <td>T</td>
+		                <td>T</td>
+		                <td></td>
+		            </tr>
+		        </tbody>
+		      <tfoot>
+		            <tr>
+		                <th></th>
+		                <th></th>
+		                <th><em>\(\sum_{H,T} = \)</em></th>
+		                <th><b>0.17</b></th>
+		            </tr>
+		        </tfoot>
+		    </table>
+		    
+		    <p>And analytically, applying the total probability definition:
+		    $$\begin{array}{ccl}
+		        P(H,T) & = & P(H,T | 1) \cdot P(1) + P(H,T | ¬1) \cdot P(¬1) \\
+		        & = & (0.5 \cdot 0.5) \cdot P(1) + (0.9 \cdot 0.1) \cdot P(¬1) \\ 
+		        & = & 0.25 \cdot 0.5 + 0.09 \cdot 0.5 \\
+		        & = & 0.125 + 0.045 \\
+		        & = & 0.17
+		    \end{array}$$</p>
+		</article>
+		
 		
 	</body>
 </html>	

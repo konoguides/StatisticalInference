@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Central tendency</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+        <script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });</script>
+        <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body class="kg-content">
+        <header>
+            <h1>Central tendency</h1>
+        </header>
+
+        <article class="subsection">
+            <h1>Measures of central tendency</h1>
+            <ul>
+                <li><em>single value</em> that attempts to <em>describe</em> a set of <em>data</em></li>
+                <li>by <em>identifying</em> the <em>central position</em> within that set of data</li>
+            </ul>
+            
+            <h2 id="">when to use the mean, median and mode</h2>
+            <br>
+            <table>
+                <caption></caption>
+                <thead>
+                    <tr style="text-align: center;">
+                        <th>Type of table</th>
+                        <th>Best measure of central tendency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Categorical</td>
+                        <td style="text-align: center;">Mode</td>
+                    </tr>
+                    <tr>
+                        <td>Ordinal</td>
+                        <td style="text-align: center;">Median</td>
+                    </tr>
+                    <tr>
+                        <td>Numerical (not skewed)</td>
+                        <td style="text-align: center;">Mean</td>
+                    </tr>
+                    <tr>
+                        <td>Numerical (skewed)</td>
+                        <td style="text-align: center;">Median</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </article>
+
+        <article class="subsection">
+            <h1>Mean</h1>
+            
+            <article class="definition">
+                <h1>Mean</h1>
+                <p>The mean (\(\mu\)-population, \(\bar{x}\)-sample) of a dataset is the numerical average and can be computed by dividing the sum of all the data points by the number of data points:
+                $$\bar{x} = \frac{1}{n} \sum_{i=0}^{n} x_i, \hspace{1.5cm} \mu = \frac{1}{N} \sum_{i=0}^{N} x_i$$</p>
+            </article>
+            
+            <article class="note">The mean is heavily <em>affected by outliers</em>, therefore we say the mean is <em>not a robust measurement</em>.</article>
+            
+            <article class="property">
+                <h1>Unbiased estimator</h1>
+                <p>The <em>mean</em> has the property of being a <em>unbiased estimator</em>, which means that many samples from the same population will have similar means, so the mean of the means will be a unbiased estimator of the population mean.Thus the mean can be used to make inferences about the population it came from.</p>
+            </article>
+        </article>
+        
+        <article class="subsection">
+            <h1>Median</h1>
+            
+            <article class="definition">
+                <h1>Median</h1>
+                <p>The median of a dataset is the datapoint that is directly in the middle of the ordered data set. If two numbers are in the middle then the median is the average of the two.</p>
+                <ol>
+                    <li>For <em>odd</em> datasets, the position of the middle score is \(\frac{n+1}{2}\), so the 
+                    $$\text{median} = x_{\frac{n+1}{2}}$$</li>
+                    <li>For <em>even</em> datasets, the position of the two middle scores is \(\frac{n}{2}\) and \(\frac{n}{2} + 1\) , so the
+                    $$\text{median} = \frac{x_{\frac{n}{2}} + x_{\frac{n}{2}+1}}{2}$$</li>
+                </ol>
+            </article>
+            
+            <article class="note">The median is <em>robust to outliers</em>, therefore an outlier will not affect the value of the median.</article>
+        </article>
+        
+        <article class="subsection">
+            <h1>Mode</h1>
+            
+            <article class="definition">
+                <h1>Mode</h1>
+                <p>The mode of a dataset is the datapoint that occurs the most
+frequently in the data set.</p>
+
+                <ul>
+                    <li><em>Mode of a distribution</em>: range that occurs with the highest frequency</li>
+                    <li><em>Uniform</em> distribution: no mode</li>
+                    <li><em>Multimodal</em>: two or more distinct clear trends</li>
+                </ul>
+                
+            </article>
+            
+            <article class="note">The mode is <em>robust to outliers</em> as well.</article>
+        </article>
+        
+        <article class="subsection">
+            <h1>Skewed distributions</h1>
+            
+            <ul>
+                <li>distribution <em>skewness</em> can be derived by <em>comparing</em> mean, median and mode</li>
+            </ul>
+            
+            <table>
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td><a href="" target="_self">No skewed</a></td>
+                        <td><figure>
+                            <img src="media/NoSkewed.png" alt="alt-text" width="200px" height="px">
+                            <figcaption>\(\text{mean} = \text{median} = \text{mode}\)</figcaption>
+                        </figure></td>
+                    </tr>
+                    <tr>
+                        <td><a href="" target="_self">Negative skewed (right modal)</a></td>
+                        <td><figure>
+                            <img src="media/NegSkewed.png" alt="alt-text" width="180px" height="px">
+                            <figcaption>\(\text{mean} < \text{median} < \text{mode}\)</figcaption>
+                        </figure></td>
+                    </tr>
+                    <tr>
+                        <td><a href="" target="_self">Positive skewed (left modal)</a></td>
+                        <td><figure>
+                            <img src="media/PosSkewed.png" alt="alt-text" width="180px" height="px">
+                            <figcaption>\(\text{mode} < \text{median} < \text{mean}\)</figcaption>
+                        </figure></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+        </article>
+
+    </body>
+</html>

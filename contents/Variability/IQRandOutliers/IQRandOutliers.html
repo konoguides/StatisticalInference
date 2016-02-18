@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>IQR &amp; outliers</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+        <script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });</script>
+        <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body class="kg-content">
+        <header>
+            <h1>IQR &amp; outliers</h1>
+        </header>
+
+        <article class="subsection">
+            <h1>Box plots &amp; the IQR</h1>
+            
+            <ul>
+                <li><em>box plot</em>: great way to visually show the 5-number-summary of a data set</li>
+                <li><em>5-number-summary</em>: minimmum, <span class="tooltip" title="first quartile">Q1</span>, <span class="tooltip" title="Q2">median</span>, <span class="tooltip" title="third quartile">Q3</span> and maximum</li>
+            </ul>
+            
+            
+            <article class="definition">
+                <h1>Interquartile range (IQR)</h1>
+                <p>The distance between the 1st quartile and 3rd quartile. Give us the interval of the middle 50% of our data.
+                $$IQR = Q3 - Q1$$</p>
+            </article>
+            
+            <figure>
+                <img src="media/SimpleBoxPlot.png" alt="alt-text" width="350px" height="px">
+                <figcaption>A simple boxplot</figcaption>
+            </figure>
+            
+        </article>
+        
+        <article class="subsection">
+            <h1>Finding outliers</h1>
+            
+            
+            <article class="definition">
+                <h1>Outliers</h1>
+                <p>Values that are unusual compared to the rest of the data set by being especially small or large in numerical value.</p>
+            </article>
+            
+            <h2 id="">how to identify outliers</h2>
+            
+            <table width="100%">
+                <caption></caption>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Lower outliers</th>
+                        <th>Upper outliers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b><a href="" target="_self">Soft outliers</a></b></td>
+                        <td>\(x < Q1 - 1.5 \cdot IQR\)</td>
+                        <td>\(x > Q3 + 1.5 \cdot IQR\)</td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Hard outliers</a></b></td>
+                        <td>\(x < Q1 - 3.0 \cdot IQR\)</td>
+                        <td>\(x > Q3 + 3.0 \cdot IQR\)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <pre><code>>>> import numpy as np
+>>>
+>>> data = [-15,-5,1,2,3,4,5,6,7,16,25]
+>>> Qs = [np.percentile(data,p) for p in [25,50,75]]
+[1.5, 4.0, 6.5]
+>>> Q1, Q3 = Qs[0], Qs[-1]
+>>> IQR = Q3-Q1
+5.0
+>>>
+>>> # soft outliers
+>>> [Q3-1.5*IQR, Q3+1.5*IQR]
+[-1.0, 14.0]
+>>> soft_out = filter(lambda x: (x < Q3-1.5*IQR) or (x>Q3+1.5*IQR) , data)
+[-15, -5, 16, 25]
+>>> no_out = filter(lambda x: (Q3-1.5*IQR <= x <=Q3+1.5*IQR), data)
+[1, 2, 3, 4, 5, 6, 7]
+>>>
+>>> # hard outliers
+[-8.5, 21.5]
+>>> hard_out = filter(lambda x: (x < Q3-3.0*IQR) or (x>Q3+3.0*IQR) , data)
+[-15, 25]
+>>> no_out = filter(lambda x: (Q3-3.0*IQR <= x <=Q3+3.0*IQR), data)
+[-5, 1, 2, 3, 4, 5, 6, 7, 16]</code></pre>
+            
+        </article>
+
+    </body>
+</html>

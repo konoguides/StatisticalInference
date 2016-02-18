@@ -23,28 +23,58 @@
             <h1>Variance</h1>
             
             <article class="definition">
-                <h1></h1>
-                <p>The variance of a random variable is a <em>measure of spread</em> of a density arround its mean. It is is defined as the <em>expected square distance</em> the random variable is <em>from the mean</em>:
+                <h1>Variance</h1>
+                <p>The variance (\(\sigma^2\)-population, \(s^2\)-sample) of a random variable is a <em>measure of spread</em> of a density around its mean. It is is defined as the <em>expected square distance</em> the random variable is <em>from the mean</em>:
                 $$Var\left(X\right) = \sigma^2 = E\left[\left(X-\mu\right)^2\right] = E\left[X^2\right] - E\left[X\right]^2$$</p>
+                
+                <p>Can be computed as:
+                $$s^2 = \frac{1}{n-1} \sum_{i=0}^n \left(x_i - \bar{x}\right)^2, \hspace{1.5cm} \sigma^2 = \frac{1}{N} \sum_{i=0}^N \left(x_i - \mu\right)^2$$</p>
             </article>
             
+            <article class="note">The relation for \(s^2\) is shown including the Bessel's correction.</article>
+            
+            <h2 id="">characteristics:</h2>
+            
             <ul>
-                <li>densities with higher variance are more apread than those with lower</li>
+                <li>densities with higher variance are more spread than those with lower</li>
                 <li>variance is always <em>non-negative</em></li>
                 <li>small variance = data points tend to be very close to the mean to each other</li>
                 <li>variance of <em>zero</em> indicates that all the values are <em>identical</em></li>
             </ul>
                 
-            
+            <article class="definition">
+                <h1>Bessel's correction</h1>
+                <p>Corrects the bias in the estimation of the population variance, and some (but not all) of the bias in the estimation of the population standard deviation. To apply Bessel's correction we multiply \(\frac{\sum_{i=0}^n \left(x_i - \bar{x}\right)^2}{n}\) by \(\frac{n}{n-1}\).</p>
+            </article>
         </article>
         
         <article class="subsection">
             <h1>Standard deviation</h1>
+            
+            <article class="definition">
+                <h1>Standard deviation</h1>
+                <p>Standard deviation (\(\sigma\)-population, \(s\)-sample) is the square root of the variance, ad it used to <em>measure distance from</em> the <em>mean</em>.
+                $$s = \sqrt{s^2} \hspace{1.5cm} \sigma = \sqrt{\sigma^2}$$</p>
+            </article>
+            
+            <h2 id="">normal distribution and standard deviation</h2>
+            
+            <p>In normal distributions:</p>
             <ul>
-                <li>square root of the variance
-                $$\sigma = \sqrt{\sigma^2}$$</li>
-                <li></li>
+                <li><em>68.26%</em> of the data lies within 1 standard deviation <em>(1s)</em> from the mean,</li>
+                <li><em>95.44%</em> within 2 standard deviations <em>(2s)</em>, and</li>
+                <li><em>99.74%</em> within 3 standard deviation <em>(3s)</em></li>
             </ul>
+            
+            <figure>
+                <img src="media/nd.gif" alt="alt-text" width="400px" height="px">
+                <figcaption></figcaption>
+            </figure>
+            
+            <figure>
+                <img src="media/BoxplotvsPDF.svg" alt="alt-text" width="400px" height="px">
+                <figcaption><span class="tooltip" title="with quartiles and an interquartile range">Boxplot</span> and a <span class="tooltip" title="probability density function">pdf</span> of a normal \(N(0,1 \sigma^2)\) population</figcaption>
+            </figure>
             
         </article>
 
