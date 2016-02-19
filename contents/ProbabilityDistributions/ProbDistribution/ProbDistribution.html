@@ -23,24 +23,34 @@
 		
 		<article class="subsection">
 			<h1>Probability distribution</h1>
-			<ul>
-			    <li><em>function</em> \(P\) from random variable <em>value</em> <em>to</em> its associated <em>probability</em></li>
-			    <li>propose statements about the population, not of the data itself</li>
-			    <li><em>random variates</em>: realizations of random variable according to its probability distribution</li>
-			    <li>can be <span class="tooltip" title="gives the probability of a single random variable taking on various alternative values">univariate</span> or <span class="tooltip" title="gives the probabilities of a random vector &mdash;a set of two or more random variables&mdash; taking on various combinations of values">multivariate</span></li>
-			    <li>the <em>sum</em> of possible values (or area) has to add <em>up to one</em></li>
-			    <li>must be \(\geq 0\) everywhere</li>
-			    <li>two principal varieties:</li>
-			</ul>
-			<table>
+			
+			<article class="definition">
+			    <h1>Probability distribution</h1>
+			    <p>A function \(F\) that maps the value \(x\) of a random variable to its probability of occurrence. The area beneath the curve described by \(F\) must be 1, and \(P(x) \geq 0 \).</p>
+			    <p>The proposed statements are about the population, not of the data itself, and can be <span class="tooltip" title="gives the probability of a single random variable taking on various alternative values">univariate</span> or <span class="tooltip" title="gives the probabilities of a random vector &mdash;a set of two or more random variables&mdash; taking on various combinations of values">multivariate</span>.</p>
+			</article>
+
+			<table width="100%">
 			    <tbody>
 			        <tr>
-			            <td><a href="" target="_self">discrete</a></td>
-			            <td>for discrete random variables; known as <em>probability mass function (PMF)</em>; probability that the variable takes a specific value</td>
+			            <td colspan="3" style="color: #2878A2; font-weight: bold;">Two principal varieties</td>
 			        </tr>
 			        <tr>
-			            <td><a href="" target="_self">continuous</a></td>
-			            <td>for continuous random variables; known as <em>probability density function (PDF)</em>; probability that variable line within some range; area under <em>PDF</em> correspond to probabilities for that random variable; <em>derivate</em> of <em>CDF</em></td>
+			            <td width="23%" style="text-align: left;"><b><a href="" target="_self">PDF: probability density function</a></b></td>
+			            <td><span class="tooltip" title="for continuous random variables">continuous</span></td>
+			            <td><ul>
+			                <li>probability that variable lie within some range</li>
+			                <li><em>derivate</em> of <em>CDF</em></li>
+			                <li>area under <em>PDF</em> &rightarrow; probabilities for that <span class="tooltip" title="random variable">r.var</span></li>
+			            </ul></td>
+			        </tr>
+			        <tr>
+			            <td style="text-align: left;"><b><a href="" target="_self">PMF: probability mass function</a></b></td>
+			            <td><span class="tooltip" title="for discrete random variables">discrete</span></td>
+			            <td><ul>
+			                <li>probability that the variable takes a specific value</li>
+			            </ul>
+			            </td>
 			        </tr>
 			    </tbody>
 			</table>
@@ -50,19 +60,20 @@
 		<article class="subsection">
 			<h1>Cumulative distribution function (CDF)</h1>
 			<ul>
-			    <li>returns probability that random variable \(X\leq x\) some value
+			    <li>known simply as <b>distribution function</b> \(\left(F_X\right)\): returns <em>probability</em> that random <em>variable \(X\leq x\)</em>
 			    $$F_X(x) = P(X \leq x)$$</li>
-			    <li>it gives the area under the PDF associated with \(X\), from \(-\infty\) to \(x\)</li>
+			    <li>gives <em>area under PDF</em> associated with \(X\), from \(-\infty\) to \(x\)
+			    $$F_X(x) = \int_{-\infty}^x PDF(x)\cdot x \cdot dx$$</li>
 			    <li>also used to specify distribution of multivariate random variables</li>
-			    <li>known simply as <em>distribution function</em></li>
+			    
 			</ul>
 			
 		</article>
 		
 		<article class="subsection">
-		    <h1>Survival functions</h1>
+		    <h1>Survival functions (SDF)</h1>
 		    <ul>
-		        <li>returns the probability that random variable \(X \gt x\) value
+		        <li>returns the <em>probability</em> that random <em>variable \(X \gt x\)</em>
 		        $$S_X(x) = P(X \gt x)$$</li>
 		        <li>defined as the <em>complement to one of CDF</em>:
 		        $$S_X(x) = 1 - F_X(x)$$
@@ -75,10 +86,10 @@
 		    <h1>How to specify a probability distribution</h1>
 		    <p>A probability distribution can be specified by suppluying:</p>
 		    <ul>
-		        <li>a probability mass function (pmf)</li>
-		        <li>a probability density function (pdf)</li>
-		        <li>a cumulative distribution function</li>
-		        <li>a survival function</li>
+		        <li>a probability mass function (PMF)</li>
+		        <li>a probability density function (PDF)</li>
+		        <li>a cumulative distribution function (CDF)</li>
+		        <li>a survival function (SDF)</li>
 		        <li>a hazard function</li>
 		        <li>a characteristic function</li>
 		        <li>a rule for constructing a new random variable from other random variables, whose joint probability distribution is known</li>

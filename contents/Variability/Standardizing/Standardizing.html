@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Standardizing</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+        <script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });</script>
+        <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body class="kg-content">
+        <header>
+            <h1>Standardizing</h1>
+        </header>
+
+        <article class="subsection">
+            <h1>Z score</h1>
+            
+            <article class="definition">
+                <h1>Standard score</h1>
+                <p>Given an observed value \(x\), the \(Z\) score finds the number of standard deviations \(\left(\sigma\right)\), that \(x\) is away from mean \(\left(\mu\right)\)
+                $$Z = \frac{x-\mu}{\sigma}$$</p>
+                
+                <p>The <em>\(Z\)</em> variable is characterized by a <em>Normal Distribution</em> with \(\mu=0\) and \(\sigma=1\).</p>
+            </article>
+            
+            <article class="example">
+                <h1></h1>
+                <p>The average height of a professional basketball player was 2.00 meters with a standard deviation of 0.02 meters. Harrison Barnes is a basketball player who measures 2.03 meters. How many standard deviations from the mean is Barnes’ height?</p>
+                <p>First we should sketch the normal curve that represents the distribution of basketball player heights.</p>
+                <figure>
+                    <img src="media/example1.png" alt="alt-text" width="500px" height="px">
+                    <figcaption>Notice we place the mean height 2.00 right in the middle and make tick marks that are each 1 standard deviation or 0.02 meters away in both directions.</figcaption>
+                </figure>
+                <p>Next we should compute the standard score (i.e. z score) for Barnes' height. Since \(\mu = 2.00\), \(\sigma = 0.02\), and \(x = 2.03\) we can find the z-score:
+                $$\frac{x-\mu}{\sigma} = \frac{2.03-2.00}{0.02}=\frac{0.03}{0.02}= 1.5$$</p>
+                <p>Finding 1.5 as the z score tells us that Barnes’ height is <em>1.5 standard deviations from the mean</em>, that is \(1.5 \sigma + μ = \text{Barnes' Height}\)</p>
+            </article>
+            
+            <article class="example">
+                <h1></h1>
+                <p>The average height of a professional hockey player is 1.86 meters with a
+standard deviation of 0.06 meters. Tyler Myers, a professionally hockey, is the same height as Harrison Barnes. Which of the two is taller in their respective league?</p>
+                <p>To find Tyler Myers standard score we can use the information: \(\mu = 1.86\), \(\sigma = 0.06\), and \(x = 2.03\). This results in the standard score:
+                $$\frac{x-\mu}{\sigma} = \frac{2.03-1.86}{0.06}=\frac{0.17}{0.06}= 2.833$$</p>
+                <p>Comparing the two z-scores we see that Tyler Myers score of 2.833 is larger than Barnes' score of 1.5. This tells us that there are more hockey players shorter than Myers than there are basketball players shorter than Barnes'.</p>
+            </article>
+            
+        </article>
+        
+        
+
+    </body>
+</html>
