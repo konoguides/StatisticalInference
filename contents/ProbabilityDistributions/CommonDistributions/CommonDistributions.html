@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Common distributions</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+        <script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });</script>
+        <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body class="kg-content">
+        <header>
+            <h1>Common distributions</h1>
+        </header>
+
+        <article class="subsection">
+            <h1>Distribution's catalog</h1>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="color: #2878A2; font-weight: bold;">Continuous distributions <a href="media/SciPyStatFun.html" target="_blank">(*)</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="" target="_self">alpha</a></td>
+                        <td>An alpha <span class="tooltip" title="continuous random variable">c.r.v</span></td>
+                        <td><a href="" target="_self">anglit</a></td>
+                        <td>An anglit c.r.v</td>
+                    </tr>
+                    <tr>
+                        <td><a href="" target="_self">chi</a></td>
+                        <td>A chi c.r.v</td>
+                        <td><a href="" target="_self">chi2</a></td>
+                        <td>A chi-squared c.r.v</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#norm" target="_self">norm</a></td>
+                        <td>A normal c.r.v</td>
+                        <td><a href="#t" target="_self">t</a></td>
+                        <td>A Student’s T c.r.v</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="color: #2878A2; font-weight: bold;">Multivariate distributions</td>
+                    </tr>
+                    <tr>
+                        <td><a href="" target="_self"></a></td>
+                        <td></td>
+                        <td><a href="" target="_self"></a></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="color: #2878A2; font-weight: bold;">Discrete distributions</td>
+                    </tr>
+                    <tr>
+                        <td><a href="" target="_self"></a></td>
+                        <td></td>
+                        <td><a href="" target="_self"></a></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+        
+        <article class="subsection">
+            <h1>Continuous distributions</h1>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td id="norm" colspan="6" height="50px" style="color: #2878A2; font-weight: bold;">Normal distribution (<a href="" target="_self"><code>norm</code></a>)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td width="50%" colspan="3">PDF: $$f \left( x | \mu, \sigma^2\right) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{\left( x-\mu \right)^2}{2 \sigma^2}}$$</td>
+                        <td width="50%" colspan="3">CDF: $$F_X \left( x | \mu, \sigma^2\right)$$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><pre><code>from scipy.stats import norm
+# KEYWORDS: loc = mean, scale = standard deviation
+ndst = norm(loc=0, scale=1)         # create a frozen distribution
+mean, var, skew, kurt = norm.stats(loc=0, scale=1, moments='mvsk')
+mean, median, var, std = ndst.mean(), ndst.median(), ndst.var(), ndst.std()</code></pre>
+                        <pre><code># PDF
+norm.pdf(x, loc=0, scale=1)
+# CMF
+norm.cdf(x, loc=0, scale=1)
+# Survival function
+norm.sf(x, loc=0, scale=1)
+# Percent point function (inverse of cdf — percentiles)
+norm.ppf(q, loc=0, scale=1)
+# Inverse survival function
+norm.isf(q, loc=0, scale=1)
+# Endpoints of the range that contains alpha
+# percent of the distribution, simetricaly from the mean
+norm.interval(alpha, loc=0, scale=1)
+# Random variates
+norm.rvs(loc=0, scale=1, size=1, random_state=None)</code></pre>
+                        <pre><code># Parameter estimates (mean, std) for generic data
+norm.fit(data)
+# Expected value of a function (of one argument)
+# with respect to the distribution
+norm.expect(func, loc=0, scale=1, lb=None, ub=None,
+            conditional=False, **kwds)</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="t" colspan="6" height="50px" style="color: #2878A2; font-weight: bold;">Student's T distribution (<a href="" target="_self"><code>t</code></a>)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+        
+        <article class="subsection">
+            <h1>Multivariate distributions</h1>
+            <p></p>
+        </article>
+        
+        <article class="subsection">
+            <h1>Discrete distributions</h1>
+            <p></p>
+        </article>
+
+    </body>
+</html>

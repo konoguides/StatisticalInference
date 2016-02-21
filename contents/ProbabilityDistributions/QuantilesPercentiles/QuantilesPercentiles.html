@@ -60,6 +60,16 @@
 3.5
 >>> np.percentile(data, 75)
 4.75</code></pre>
+
+            <h2 id="">percentile of a distribution</h2>
+            <ul>
+                <li>example for <em>normal distribution</em></li>
+                <li>for other distribution go to <a href="../CommonDistributions/CommonDistributions.html" target="_blank">Common Distribution section</a></li>
+            </ul>
+            
+            <pre class="python"><code>from scipy.stats import norm
+# Percent point function (inverse of cdf — percentiles)
+norm.ppf(q, loc=0, scale=1)</code></pre>
 		    
 		</article>
 		
