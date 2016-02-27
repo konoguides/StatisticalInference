@@ -11,6 +11,7 @@
                 TeX: { equationNumbers: { autoNumber: "AMS" } }
             });</script>
         <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        
         <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
         <script>hljs.initHighlightingOnLoad();</script>
     </head>
@@ -75,27 +76,26 @@
                 <caption></caption>
                 <tbody>
                     <tr>
-                        <td id="norm" colspan="6" height="50px" style="color: #2878A2; font-weight: bold;">Normal distribution (<a href="" target="_self"><code>norm</code></a>)</td>
+                        <td id="norm" colspan="6" height="50px" style="color: #2878A2; font-weight: bold;">Normal distribution (<a href="http://docs.scipy.org/doc/scipy-0.16.0/reference/generated/scipy.stats.norm.html" target="_blank"><code>norm</code></a>)</td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Notation:</a></b></td>
+                        <td colspan="2">\(\mathscr{N}\left(\mu, \sigma^2\right)\)</td>
+                        <td colspan="3" rowspan="3">
+                            <img src="media/normdist.png" alt="alt-text" width="px" height="px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Parameters</a></b></td>
+                        <td colspan="2">\(\mu \in \mathscr{R}\) &mdash; <span class="tooltip" title="location">mean</span></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2">\(\sigma^2 > 0\) &mdash; <span class="tooltip" title="square scale">variance</span></td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td width="50%" colspan="3">PDF: $$f \left( x | \mu, \sigma^2\right) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{\left( x-\mu \right)^2}{2 \sigma^2}}$$</td>
-                        <td width="50%" colspan="3">CDF: $$F_X \left( x | \mu, \sigma^2\right)$$</td>
+                        <td width="50%" colspan="3"><b><a href="" target="_self">PDF:</a></b> $$f \left( x | \mu, \sigma^2\right) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{\left( x-\mu \right)^2}{2 \sigma^2}}$$</td>
+                        <td width="50%" colspan="3"><b><a href="" target="_self">CDF:</a></b> $$F_X \left( x | \mu, \sigma^2\right) = \frac{1}{2} \left(1 + erf\left(\frac{x-\mu}{\sigma \sqrt{2}}\right)\right)$$</td>
                     </tr>
                     <tr>
                         <td colspan="6"><pre><code>from scipy.stats import norm
@@ -127,8 +127,41 @@ norm.expect(func, loc=0, scale=1, lb=None, ub=None,
                         </td>
                     </tr>
                     <tr>
-                        <td id="t" colspan="6" height="50px" style="color: #2878A2; font-weight: bold;">Student's T distribution (<a href="" target="_self"><code>t</code></a>)</td>
+                        <td id="t" colspan="6" height="50px" style="color: #2878A2; font-weight: bold;">Student's T distribution (<a href="http://docs.scipy.org/doc/scipy-0.16.0/reference/generated/scipy.stats.t.html" target="_blank"><code>t</code></a>)</td>
                     </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Parameters</a></b></td>
+                        <td colspan="2">\(\nu > 0\) &mdash; dof</td>
+                        <td colspan="3" rowspan="5">
+                            <img src="media/tdist.png" alt="alt-text" width="px" height="px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Mean:</a></b></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Median:</a></b></td>
+                        <td colspan="2">0</td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Mode:</a></b></td>
+                        <td colspan="2">0</td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Variance:</a></b></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><b><a href="" target="_self">PDF:</a></b> $$f \left( x | \nu\right) = \frac{\Gamma \left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu \pi}\Gamma \left(\frac{\nu}{2}\right)} \left( 1 + \frac{x^2}{\nu} \right)^{-\frac{\nu + 1}{2}}$$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><b><a href="" target="_self">CDF:</a></b> $$F_X \left( x | \nu\right) = \frac{1}{2}+x\Gamma\left(\frac{\nu+1}{2}\right)\times\frac{_{2}F_{1}\left(\frac{1}{2},\frac{\nu+1}{2};\frac{3}{2};\frac{x^{2}}{\nu}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}$$
+                        where \(_{2}F_{1}\) is the <a href="https://en.wikipedia.org/wiki/Hypergeometric_function" target="_blank">hypergeometric function</a></td>
+                    </tr>
+                    
+                    
+                    
                     <tr>
                         <td></td>
                         <td></td>
