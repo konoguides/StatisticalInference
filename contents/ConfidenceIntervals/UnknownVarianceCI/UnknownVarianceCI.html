@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unknown \(\sigma\) confidence intervals</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+        <script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });</script>
+        <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body class="kg-content">
+        <header>
+            <h1>Unknown standard deviation confidence intervals</h1>
+        </header>
+
+        <article class="subsection">
+            <h1>How to construct a confidence interval</h1>
+            <ol>
+                <li><em>Choose</em> the <span class="tooltip" title="sample mean, sample proportion">statistic</span> that you will use to estimate a population parameter</li>
+                <li><em>Select</em> a <em>confidence level</em> \(\left(c = \left(1 - \alpha\right) \right) \): any percentage, most commons 90%, 95% and 99%</li>
+                <li><em>Find</em> the <em>margin of error</em>: based on unknown standard deviation \(s\)
+                $$\begin{array}{ccl}
+                    \text{margin of error} & = & \text{critical value} \cdot \text{std of sampling distribution} \\
+                     & = & t^* \cdot SE
+                \end{array}$$
+with:
+                $$t^* = CDF^{-1}_{t(r)} \left( \frac{1+c}{2} \right)$$
+where \(r = n-1\) are the degrees of freedom for the <em>Student t</em> distribution
+                </li>
+                <li><em>Specify</em> the <b>confidence interval</b>:
+                $$\begin{array}{rcl}
+                    CI & = & \text{sample statistic} \pm \text{margin of error} \\
+                     & = & \text{sample statistic} \pm t^* \frac{s}{\sqrt{n}}
+                \end{array}$$
+where \(n\) is the size of sample used to construct the CI.
+                </li>
+            </ol>
+        </article>
+        
+        <article class="exercise">
+            <h1>Confidence intervals with unknown \(\sigma\)</h1>
+            <p></p>
+            <h2></h2>
+            <!-- solution -->
+            <p></p>
+        </article>
+
+    </body>
+</html>

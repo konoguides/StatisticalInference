@@ -30,28 +30,20 @@
             <article class="definition">
                 <h1>Standard error (SE)</h1>
                 
-                <ul>
-                	<li>of we know where it falls in the distribution, we can decide if this sample is typical or something rear is going on</li>
-                	<li>Good job! We'll describe the location of the sample mean by calculating how many standard errors it is away from the center of the sampling distribution. That will give us a z-score for our sample mean.</li>
-                </ul>
-                
-                
-                <p>The <b>standard deviation</b> of the <em>sampling distribution</em>. It tell us the interval in which the population mean is most likely going to lay. And it's related with the <i>population standard deviation</i> \(\left( \sigma \right)\) as:
+                <p>The <b>standard deviation</b> of the <em>sampling distribution</em>. Measures its variability, and tell us the interval in which the population mean is most likely going to lay. And it's related with the <i>population standard deviation</i> \(\left( \sigma \right)\) as:
                 $$\sigma = \sqrt{n} \cdot SE \hspace{1cm} \rightarrow \hspace{1cm} SE = \frac{\sigma}{\sqrt{n}}$$
-                where \(n\) is the size of the samples associated with the sampling distribution.</p>
+                where \(n\) is the <span class="tooltip" title="size of the samples">number of observations</span> in the samples associated with the sampling distribution.</p>
             </article>
             
-            <h2 id="">Variability of sampling distribution</h2>
-            <ul>
-                <li>measured by its variance of its standard deviation</li>
-                <li>depends on three factors</li>
-                <ul>
-                    <li>\(N\): number of observations in the population</li>
-                    <li>\(n\): number of observations in the sample</li>
-                    <li>the way that the random sample is chosen</li>
-                </ul>
-            </ul>
+            <h2 id="">Applications of sampling distributions</h2>
             
+            <ul>
+                <li>determine <em>where</em> in the sampling distribution a <em>particular sample lays</em></li>
+                <li>if know where it falls, we can <em>decide</em> in sample is <em>typical or</em> something <em>rear</em> is going on</li>
+                <li><em>sample location description</em>: how many \(SE\) away from center of sampling distribution
+                $$\text{z-score} = \frac{\bar{x} - \mu}{SE}$$
+                </li>
+            </ul>
         </article>
         
         <article class="subsection">
@@ -72,17 +64,41 @@
                     </ol>
                 </li>
             </ul>
+        </article>
+        
+        <article class="subsection">
+            <h1>Finite population correction (fpc) for the SE</h1>
+            
+            <ul>
+                <li><em>when</em> population size <span class="tooltip" title="number of observations in the population">\(\left( N \right)\)</span> very large relative to sample size <span class="tooltip" title="number of observations in each sample">\(\left( n \right)\)</span>: \(fpc \rightarrow 1\)</li>
+                <li><em>standard error</em> can be <em>approximated</em> by: \(SE = \frac{\sigma}{\sqrt{n}}\)</li>
+                <li>safe to use when \(n < \frac{1}{20} N\)</li>
+                <li><em>otherwise</em> use the finite population correction factor:
+                $$SE = \frac{\sigma}{\sqrt{n}} \cdot \sqrt{\frac{N-n}{N-1}}$$
+                </li>
+            </ul>
             
             
         </article>
-
-        <article class="subsection">
+        
+        <article class="exercise">
             <h1>Sampling distribution of the mean</h1>
+            <ul>
+                <li><a href="media/PizzaDeliverTime.html" target="_blank">Pizza delivery time</a></li>
+                <li></li>
+            </ul>
+        </article>
+        
+        <article class="exercise">
+            <h1>Sampling distribution of the proportion</h1>
+            <p></p>
+            <h2></h2>
+            <!-- solution -->
             <p></p>
         </article>
         
         <article class="subsection">
-            <h1>Sampling distribution of the proportion</h1>
+            <h1>Standard error in python?</h1>
             <p></p>
         </article>
 
