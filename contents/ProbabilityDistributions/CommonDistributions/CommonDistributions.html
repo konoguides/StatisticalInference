@@ -115,7 +115,8 @@ norm.ppf(q, loc=0, scale=1)
 norm.isf(q, loc=0, scale=1)
 # Endpoints of the range that contains alpha
 # percent of the distribution, simetricaly from the mean
-norm.interval(alpha, loc=0, scale=1)
+# c = confidence level
+norm.interval(c, loc=sample_statistic, scale=SE)
 # Random variates
 norm.rvs(loc=0, scale=1, size=1, random_state=None)</code></pre>
                         <pre><code># Parameter estimates (mean, std) for generic data
@@ -130,6 +131,16 @@ norm.expect(func, loc=0, scale=1, lb=None, ub=None,
                         <td id="t" colspan="6" height="50px" style="color: #2878A2; font-weight: bold;">Student's T distribution (<a href="http://docs.scipy.org/doc/scipy-0.16.0/reference/generated/scipy.stats.t.html" target="_blank"><code>t</code></a>)</td>
                     </tr>
                     <tr>
+                        <td colspan="6"><ul>
+                            <li>arises when estimating mean of normally distributed pop. with small \(n\) and unknown \(\sigma\)</li>
+                            <li>used to aproximate sampling distributions when std unknown</li>
+                            <li>whereas normal distribution describes a full population, t-distributions <em>describe samples</em> drawn from a full population</li>
+                            <li>t-distribution <em>for each sample</em> size is <em>different</em></li>
+                            <li><em>larger</em> the <em>sample</em>, the more the distribution <em>resembles</em> a <em>normal</em> distribution</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
                         <td><b><a href="" target="_self">Parameters</a></b></td>
                         <td colspan="2">\(\nu > 0\) &mdash; dof</td>
                         <td colspan="3" rowspan="5">
@@ -138,7 +149,10 @@ norm.expect(func, loc=0, scale=1, lb=None, ub=None,
                     </tr>
                     <tr>
                         <td><b><a href="" target="_self">Mean:</a></b></td>
-                        <td colspan="2"></td>
+                        <td colspan="2">$$\begin{cases}
+                        0 & \nu > 1 \\
+                        \text{undefined} & \text{otherwise}
+                        \end{cases}$$</td>
                     </tr>
                     <tr>
                         <td><b><a href="" target="_self">Median:</a></b></td>
@@ -150,7 +164,11 @@ norm.expect(func, loc=0, scale=1, lb=None, ub=None,
                     </tr>
                     <tr>
                         <td><b><a href="" target="_self">Variance:</a></b></td>
-                        <td colspan="2"></td>
+                        <td colspan="2">$$\begin{cases}
+                        \frac{\nu}{\nu-2} & \nu > 2 \\
+                        \infty & 1 < \nu \leq 2 \\
+                        \text{undefined} & \text{otherwise}
+                        \end{cases}$$</td>
                     </tr>
                     <tr>
                         <td colspan="6"><b><a href="" target="_self">PDF:</a></b> $$f \left( x | \nu\right) = \frac{\Gamma \left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu \pi}\Gamma \left(\frac{\nu}{2}\right)} \left( 1 + \frac{x^2}{\nu} \right)^{-\frac{\nu + 1}{2}}$$</td>
@@ -159,7 +177,40 @@ norm.expect(func, loc=0, scale=1, lb=None, ub=None,
                         <td colspan="6"><b><a href="" target="_self">CDF:</a></b> $$F_X \left( x | \nu\right) = \frac{1}{2}+x\Gamma\left(\frac{\nu+1}{2}\right)\times\frac{_{2}F_{1}\left(\frac{1}{2},\frac{\nu+1}{2};\frac{3}{2};\frac{x^{2}}{\nu}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}$$
                         where \(_{2}F_{1}\) is the <a href="https://en.wikipedia.org/wiki/Hypergeometric_function" target="_blank">hypergeometric function</a></td>
                     </tr>
-                    
+                    <tr>
+                        <td colspan="6"><pre><code>from scipy.stats import t
+# KEYWORDS: df = degrees of freedom as a shape parameter
+# standardized form
+ndst = t(df)         # create a frozen distribution
+# use loc and scale to shift and scale dist
+# t.pdf(x, df, loc, scale) -> t.pdf(y, df)/scale with y = (x-loc)/scale
+ndst = t(df, loc, scale)         # create a frozen distribution
+mean, var, skew, kurt = t.stats(loc=0, scale=1, moments='mvsk')
+mean, median, var, std = ndst.mean(), ndst.median(), ndst.var(), ndst.std()</code></pre>
+                        <pre><code># PDF
+t.pdf(x, df)
+# CDF
+t.cdf(x, df)
+# Survival function
+t.sf(x, df)
+# Percent point function (inverse of cdf — percentiles)
+t.ppf(q, df)
+# Inverse survival function
+t.isf(q, df)
+# Endpoints of the range that contains alpha
+# percent of the distribution, simetricaly from the mean
+# c = confidence level
+t.interval(c, loc=sample_statistic, scale=SE)
+# Random variates
+t.rvs(df, loc=0, scale=1, size=1, random_state=None)</code></pre>
+                        <pre><code># Parameter estimates (mean, std) for generic data
+t.fit(data, df)
+# Expected value of a function (of one argument)
+# with respect to the distribution
+t.expect(func, args=(df,), loc=0, scale=1, lb=None, ub=None,
+            conditional=False, **kwds)</code></pre>
+                        </td>
+                    </tr>
                     
                     
                     <tr>

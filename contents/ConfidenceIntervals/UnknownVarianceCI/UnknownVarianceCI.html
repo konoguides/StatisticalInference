@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Unknown \(\sigma\) confidence intervals</title>
+        <title>Unknown standard deviation confidence intervals</title>
         <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
@@ -16,39 +16,86 @@
     </head>
     <body class="kg-content">
         <header>
-            <h1>Unknown standard deviation confidence intervals</h1>
+            <h1>Unknown \(\sigma\) confidence intervals</h1>
         </header>
 
         <article class="subsection">
             <h1>How to construct a confidence interval</h1>
-            <ol>
-                <li><em>Choose</em> the <span class="tooltip" title="sample mean, sample proportion">statistic</span> that you will use to estimate a population parameter</li>
-                <li><em>Select</em> a <em>confidence level</em> \(\left(c = \left(1 - \alpha\right) \right) \): any percentage, most commons 90%, 95% and 99%</li>
-                <li><em>Find</em> the <em>margin of error</em>: based on unknown standard deviation \(s\)
-                $$\begin{array}{ccl}
-                    \text{margin of error} & = & \text{critical value} \cdot \text{std of sampling distribution} \\
-                     & = & t^* \cdot SE
-                \end{array}$$
-with:
-                $$t^* = CDF^{-1}_{t(r)} \left( \frac{1+c}{2} \right)$$
-where \(r = n-1\) are the degrees of freedom for the <em>Student t</em> distribution
-                </li>
-                <li><em>Specify</em> the <b>confidence interval</b>:
-                $$\begin{array}{rcl}
-                    CI & = & \text{sample statistic} \pm \text{margin of error} \\
-                     & = & \text{sample statistic} \pm t^* \frac{s}{\sqrt{n}}
-                \end{array}$$
+            
+            <table width="100%" style="text-align: left;">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td width="28%"><b><a href="" target="_self">1. Choose the statistic</a></b></td>
+                        <td><ul>
+                            <li><span class="tooltip" title="sample mean, sample proportion">statistic</span> that you will use to estimate a population parameter</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">2. Select a confidence level (c)</a></b></td>
+                        <td><ul>
+                            <li>any percentage</li>
+                            <li>most commons 90%, 95% and 99%</li>
+                            <li>\(c=1- \alpha\)</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">3. Find the margin of error (me)</a></b></td>
+                        <td>
+                        $$\begin{array}{ccl}
+                        \text{me} & = & \text{critical value} \cdot \text{std of sampling distribution} \\
+                         & = & t^* \cdot SE \\
+                         & & \\
+                        t^* & = & CDF^{-1}_{t(r)} \left( \frac{1+c}{2} \right)
+                        \end{array}$$
+                        where \(r = n-1\) are the dof for the <em>Student t</em> distribution
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="28%"><b><a href="" target="_self">4. Specify the confidence interval</a></b></td>
+                        <td>
+                        $$\begin{array}{rcl}
+                        CI & = & \text{sample statistic} \pm \text{margin of error} \\
+                         & = & \text{sample statistic} \pm t^* \frac{s}{\sqrt{n}}
+                    \end{array}$$
 where \(n\) is the size of sample used to construct the CI.
-                </li>
-            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="color: #2878A2; font-weight: bold; font-size: 110%;">Two-tailed interval</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                        <pre><code>>>> from scipy.stats import norm
+>>> import numpy as np
+
+>>> c = 0.95                    # confidence level
+>>> sample_stat = 180.0         # e.g. mean
+>>> s = 30.0
+>>> n = 1000.0
+
+# USING INTERVAL METHOD OF CONTINUOS DISTRIBUTIONS
+>>> t.interval(c, n-1, sample_stat, s/np.sqrt(n))
+(178.13835943075065, 181.86164056924935)
+                        
+# MANUAL CALCULATION
+>>> t_char = t.ppf(0.5*(1+c), n-1)
+>>> me = t_char * s / np.sqrt(n)
+>>> print '({}, {})'.format(sample_stat - me, sample_stat + me)
+(178.138359431, 181.861640569)</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </article>
         
         <article class="exercise">
             <h1>Confidence intervals with unknown \(\sigma\)</h1>
-            <p></p>
-            <h2></h2>
-            <!-- solution -->
-            <p></p>
+            <ul>
+                <li><a href="media/UnknownStdMJM.html" target="_blank">Unknown \(\sigma\) exercises</a></li>
+            </ul>
         </article>
 
     </body>

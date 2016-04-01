@@ -30,15 +30,20 @@
             <article class="definition">
                 <h1>Standard error (SE)</h1>
                 
-                <p>The <b>standard deviation</b> of the <em>sampling distribution</em>. Measures its variability, and tell us the interval in which the population mean is most likely going to lay. And it's related with the <i>population standard deviation</i> \(\left( \sigma \right)\) as:
+                <p>The <b>standard deviation</b> of the <em>sampling distribution</em>. Measures its variability, and tell us the interval in which the population mean is most likely going to lie. And it's related with the <i>population standard deviation</i> \(\left( \sigma \right)\) as:
                 $$\sigma = \sqrt{n} \cdot SE \hspace{1cm} \rightarrow \hspace{1cm} SE = \frac{\sigma}{\sqrt{n}}$$
                 where \(n\) is the <span class="tooltip" title="size of the samples">number of observations</span> in the samples associated with the sampling distribution.</p>
             </article>
             
+            <h2 id="">Standard error in Python</h2>
+            <pre class="python"><code># Calculates the standard error of values in input array
+# ddof: number of dof to adjust variance for bias in limited samples
+scipy.stats.sem(a, ddof=1)</code></pre>
+            
             <h2 id="">Applications of sampling distributions</h2>
             
             <ul>
-                <li>determine <em>where</em> in the sampling distribution a <em>particular sample lays</em></li>
+                <li>determine <em>where</em> in the sampling distribution a <em>particular sample lies</em></li>
                 <li>if know where it falls, we can <em>decide</em> in sample is <em>typical or</em> something <em>rear</em> is going on</li>
                 <li><em>sample location description</em>: how many \(SE\) away from center of sampling distribution
                 $$\text{z-score} = \frac{\bar{x} - \mu}{SE}$$
@@ -97,10 +102,5 @@
             <p></p>
         </article>
         
-        <article class="subsection">
-            <h1>Standard error in python?</h1>
-            <p></p>
-        </article>
-
     </body>
 </html>

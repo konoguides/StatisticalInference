@@ -21,33 +21,81 @@
 
         <article class="subsection">
             <h1>How to construct a confidence interval</h1>
-            <ol>
-                <li><em>Choose</em> the <span class="tooltip" title="sample mean, sample proportion">statistic</span> that you will use to estimate a population parameter</li>
-                <li><em>Select</em> a <em>confidence level</em> \(\left(c = \left(1 - \alpha\right) \right) \): any percentage, most commons 90%, 95% and 99%</li>
-                <li><em>Find</em> the <em>margin of error</em>: based on known standard deviation, \(\sigma\)
-                $$\begin{array}{ccl}
-                    \text{margin of error} & = & \text{critical value} \cdot \text{std of sampling distribution} \\
-                     & = & z^* \cdot SE
-                \end{array}$$
-with:
-$$z^* = CDF^{-1}_{\mathscr{N}(0,1)} \left( \frac{1+c}{2} \right)$$
-                </li>
-                <li><em>Specify</em> the <b>confidence interval</b>:
-                $$\begin{array}{rcl}
-                    CI & = & \text{sample statistic} \pm \text{margin of error} \\
-                     & = & \text{sample statistic} \pm z^* \frac{\sigma}{\sqrt{n}}
-                \end{array}$$
+            
+            <table width="100%" style="text-align: left;">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td width="28%"><b><a href="" target="_self">1. Choose the statistic</a></b></td>
+                        <td><ul>
+                            <li><span class="tooltip" title="sample mean, sample proportion">statistic</span> that you will use to estimate a population parameter</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">2. Select a confidence level (c)</a></b></td>
+                        <td><ul>
+                            <li>any percentage</li>
+                            <li>most commons 90%, 95% and 99%</li>
+                            <li>\(c=1- \alpha\)</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">3. Find the margin of error (me)</a></b></td>
+                        <td>
+                        $$\begin{array}{ccl}
+                        \text{me} & = & \text{critical value} \cdot \text{std of sampling distribution} \\
+                         & = & z^* \cdot SE \\
+                         & & \\
+                        z^* & = & CDF^{-1}_{\mathscr{N}(0,1)} \left( \frac{1+c}{2} \right)
+                        \end{array}$$
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="28%"><b><a href="" target="_self">4. Specify the confidence interval</a></b></td>
+                        <td>
+                        $$\begin{array}{rcl}
+                        CI & = & \text{sample statistic} \pm \text{margin of error} \\
+                         & = & \text{sample statistic} \pm z^* \frac{\sigma}{\sqrt{n}}
+                    \end{array}$$
 where \(n\) is the size of sample used to construct the CI.
-                </li>
-            </ol>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="color: #2878A2; font-weight: bold; font-size: 110%;">Two-tailed interval</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                        <pre><code>>>> from scipy.stats import norm
+>>> import numpy as np
+
+>>> c = 0.98                    # confidence level
+>>> sample_stat = 40.0          # e.g. mean
+>>> sigma = 16.06
+>>> n = 250.0
+
+# USING INTERVAL METHOD OF CONTINUOS DISTRIBUTIONS
+>>> norm.interval(c, loc=sample_stat, scale=sigma/np.sqrt(n))
+(37.637073598710714, 42.362926401289286)
+                        
+# MANUAL CALCULATION
+>>> z_char = norm.ppf((1+c)/2.0)
+>>> me = z_char * sigma / np.sqrt(n)
+>>> print '({}, {})'.format(sample_stat - me, sample_stat + me)
+(37.6370735987, 42.3629264013)</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </article>
         
         <article class="exercise">
             <h1>Confidence intervals with known \(\sigma\)</h1>
-            <p></p>
-            <h2></h2>
-            <!-- solution -->
-            <p></p>
+            <ul>
+                <li><a href="media/KnownStdMJM.html" target="_blank">Known \(\sigma\) exercises</a></li>
+            </ul>
+            
         </article>
 
     </body>

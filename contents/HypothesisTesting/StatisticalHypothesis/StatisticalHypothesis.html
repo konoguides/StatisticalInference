@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Statistical hypothesis</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+        <script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });</script>
+        <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body class="kg-content">
+        <header>
+            <h1>Statistical hypothesis</h1>
+        </header>
+
+        <article class="subsection">
+            <h1>Statistical hypothesis</h1>
+            
+            <article class="definition">
+                <h1>Statistical hypothesis</h1>
+                <p>an <em>assumption about</em> a <em>population parameter</em>. This assumption <em>may</em> or may not <em>be true</em>.</p>
+            </article>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="color: #2878A2; font-weight: bold; font-size: 110%;">Types of statistical hypothesis</td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Null hypothesis</a></b></td>
+                        <td><ul>
+                            <li>denoted by \(H_0\)</li>
+                            <li>always an <em>equality</em></li>
+                            <li>hypothesize that <em>sample observations</em> result <em>purely from chance</em></li>
+                            <li>it is the claim we are trying to provide evidence against</li>
+                            <li>commonly written as:
+                            $$\begin{array}{rl}
+                            H_0: & \mu_0 = \mu \\
+                            H_0: & \mu_0 \geq \mu \\
+                            H_0: & \mu_0 \leq \mu
+                            \end{array}$$</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Alternative hypothesis</a></b></td>
+                        <td><ul>
+                            <li>denoted by \(H_1\) or \(H_a\)</li>
+                            <li>always some kind of <em>inequality</em></li>
+                            <li>hypothesize that <em>sample observations</em> are <em>influenced by</em> some <em>non-random cause</em></li>
+                            <li>is result we are checking against the claim</li>
+                            <li>commonly written as:
+                            $$\begin{array}{rl}
+                            H_a: & \mu_0 \neq \mu \\
+                            H_a: & \mu_0 > \mu \\
+                            H_a: & \mu_0 < \mu
+                            \end{array}$$</li>
+                        </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 id="">Can we accept the null hypothesis</h2>
+            <p>Some researchers say that a hypothesis test can have one of two outcomes: you accept the null hypothesis or you reject the null hypothesis. Many statisticians, however, take issue with the notion of "accepting the null hypothesis." Instead, they say: you <em>reject the null hypothesis</em> or you <em>fail to reject the null hypothesis</em>.</p>
+            <p>Why the distinction between "acceptance" and "failure to reject?" Acceptance implies that the null hypothesis is true. <em>Failure to reject implies</em> that the <em>data are not sufficiently persuasive</em> for us to prefer the alternative hypothesis over the null hypothesis.</p>
+            
+            <article class="example">
+                <h1>Fair coins</h1>
+                <p>We wanted to <em>determine whether a coin was fair and balanced</em>. A <em>null hypothesis</em> might be that <em>half</em> the <em>flips</em> would result in <em>Heads</em> and half, in Tails. The <em>alternative hypothesis</em> might be that the number of <em>Heads and Tails</em> would be <em>very different</em>. Symbolically, these hypotheses would be expressed as
+                $$\begin{array}{rl}
+                H_0 : & P=0.5 \\
+                H_1 : & P \neq 0.5
+                \end{array}$$
+Suppose we flipped the coin 50 times, resulting in 40 Heads and 10 Tails. Given this result, we would be inclined to <b>reject the null hypothesis</b>. We would <em>conclude, based on the evidence</em>, that the <em>coin was probably not fair</em> and balanced.</p>
+            </article>
+        </article>
+
+    </body>
+</html>

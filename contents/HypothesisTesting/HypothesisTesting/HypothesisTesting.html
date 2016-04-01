@@ -20,8 +20,181 @@
         </header>
 
         <article class="subsection">
-            <h1></h1>
-            <p></p>
+            <h1>What is hypothesis testing?</h1>
+            
+            <ul>
+                <li><em>formal procedures</em> used to <em>reject or not statistical hypotheses</em></li>
+                <li>formally <em>decide</em> if something is <em>likely</em> or <em>unlikely</em></li>
+                <li>allow to <em>determine</em> if something is <em>statistically significant</em></li>
+                <li>evaluates two mutually <span class="tooltip" title="test a claim bout how an observation may be different from the known population parameter">exclusive statements about a population</span></li>
+                <li>determines which is best supported by random sample from population</li>
+                <li>if <em>sample not consistent</em> with the statistical hypothesis, the <em>hypothesis is rejected</em></li>
+            </ul>
+            
+        </article>
+        
+        <article class="subsection">
+            <h1>Levels of likelihood \(\left( \alpha \right)\)</h1>
+            <ul>
+                <li>commonly known as <em>alpha or significance levels</em></li>
+                <li>acts as a <b>threshold</b> or <b>criteria</b> to decide if <em>something</em> is <em>likely or unlikely</em></li>
+                <li>address the problem it's <em>difficult</em> to <em>decide</em> upon a threshold what constitutes <em>likely or unlikely</em></li>
+                <li>statisticians have determined <em>three conventional levels of likelihood</em> (or unlikelihood):
+                $$\begin{array}{lrl}
+                P(x) = 0.05 & (\alpha = 5\%) & \rightarrow & \text{unlikely} \\
+                P(x) = 0.01 & (\alpha = 1\%) & \rightarrow & \text{unlikely} \\
+                P(x) = 0.001 & (\alpha = 0.1\%) & \rightarrow & \text{very unlikely}
+                \end{array}$$</li>
+                <li>this way, if <em>probability</em> of getting an <span class="tooltip" title="or sample statistic in sampling distribution">observation</span> is <em>less than \(\alpha\)</em>, it is <em>"unlikely" to occur</em></li>
+            </ul>
+            
+            <article class="example">
+                <h1>Significant results</h1>
+                <p>Suppose we have a \(\text{z-score}\) for a sample mean \(\left( \bar{x} \right)\) of:
+                $$\text{z-score} = \frac{\bar{x} - \mu}{SE} = 1.82,$$</p>
+                <figure>
+                    <img src="media/zCriticalRegions.png" alt="alt-text" width="450px" height="px">
+                    <figcaption>One-tailed critical values and regions</figcaption>
+                </figure>
+                <p>We can only say <em>\(\bar{x}\) is significant at \(p \lt 0.05\)</em>, because \(1.82 > 1.65\), the <em>z-critical value</em> for the <em>\(\alpha = 0.05\) critical region</em>, but \(1.82 \ngtr 2.32\) the z-critical value for the \(\alpha = 0.01\) critical region.</p>
+            </article>
+        </article>
+        
+        <article class="subsection">
+            <h1>Constructing a hypothesis test</h1>
+            
+            <table width="100%" style="text-align: left;">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td><b><a href="" target="_self">1. State the hypothesis</a></b></td>
+                        <td><ul>
+                            <li><em>state</em> null and alternative <em>hypotheses</em></li>
+                            <li>in <em>mutually exclusive</em> way</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">2. Formulate an analysis plan</a></b></td>
+                        <td><ul>
+                            <li>describes <em>how</em> to <em>use sample</em> to <em>evaluate</em> the <em>null hypothesis</em></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">3. Analyze sample data</a></b></td>
+                        <td><ul>
+                            <li><em>find</em> the <em>value</em> of the <span class="tooltip" title="mean score, proportion, t-score, z-score, etc.)">test statistic</span></li>
+                            <li>describen in analysis plan</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">4. Interpret results</a></b></td>
+                        <td><ul>
+                            <li><em>apply</em> the <em>decision rule</em> described in the analysis plan</li>
+                            <li>if test statistic's value is <span class="tooltip" title="based on null hypothesis">unlikely</span> &rightarrow; reject the null hypothesis</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="color: #2878A2; font-weight: bold; font-size: 110%">Decision rules</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li>rules for rejecting the null hypothesis</li>
+                            <li>approaches are equivalent</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-weight: bold; color: #009933;">P-value</span></td>
+                        <td><ul>
+                            <li>strength of evidence in support of a null hypothesis</li>
+                            <li>if P-value \(< \alpha\) &rightarrow; reject null hypothesis</li>
+                            <li>probability of observing a test statistic as extreme as calculated from sample, assuming the null hypotheis is true</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-weight: bold; color: #009933;">Region of acceptance</span></td>
+                        <td><ul>
+                            <li>range of values</li>
+                            <li>if test statistic falls in &rightarrow; null hypothesis is not rejected</li>
+                            <li>region of rejection: range of values outside the region of acceptance</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="color: #2878A2; font-weight: bold; font-size: 110%">Decision errors</td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-weight: bold; color: #85100F;">Type I error</span></td>
+                        <td><ul>
+                            <li>occurs when <em>rejects</em> a <em>null hypothesis</em> that is <em>true</em></li>
+                            <li><em>significance level \(\left( \alpha \right)\)</em>: probability of commiting it</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span style="font-weight: bold; color: #85100F;">Type II error</span></td>
+                        <td><ul>
+                            <li>occurs when <em>fails to reject</em> a <em>null hypothesis</em> that is <em>false</em></li>
+                            <li><em>Power</em>: probability of <em>not</em> commiting it</li>
+                            <li><em>Beta \(\left( \beta \right)\)</em>: probability of commiting it</li>
+                        </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </article>
+        
+        <article class="subsection">
+            <h1>One-tailed &amp; two-tailed tests</h1>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td><b><a href="" target="_self">One-tailed test</a></b></td>
+                        <td><ul>
+                            <li>region of rejection on only one side of sampling distribution, e.g.</li>
+                        </ul>
+                        $$\begin{array}{rl}
+                H_0 : & \mu \leq 10 \\
+                H_1 : & \mu > 10
+                \end{array}$$
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Two-tailed test</a></b></td>
+                        <td><ul>
+                            <li>region of rejection on both sides of sampling distribution</li>
+                            <li>\(\frac{\alpha}{2}\) on each side, e.g.</li>
+                        </ul>
+                        $$\begin{array}{rl}
+                H_0 : & \mu = 10 \\
+                H_1 : & \mu \neq 10
+                \end{array}$$
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </article>
+        
+        <article class="subsection">
+            <h1>Undestanding hypothesis tests</h1>
+            
+            <article class="example">
+                <h1>Family's monthly energy cost</h1>
+                <p></p>
+            </article>
         </article>
 
     </body>

@@ -26,9 +26,10 @@
                 <li><em>interval estimate</em> of a <em>population parameter</em></li>
                 <li>estimated <em>range</em> of values which is <em>likely</em> to <em>include</em> an <em>unknown population parameter</em></li>
                 <li>if CI actually contains the population parameter &rightarrow; observed data will not be considered particularly unusal</li>
+                <li>useful to estimate the <span class="tooltip" title="range of values">interval</span> that a <em>population parameter</em> may take <em>after</em> the <em>intervention</em> of an independent variable on a known population</li>
                 <li>calculated <em>from</em> the <em>observations</em>: in principle different from sample to sample</li>
                 <li>addres the issue of <em>how well</em> the <em>sample statistic estimates</em> the underlying population value</li>
-                <li>are constructed at a <em>confidence level</em>, such as 95%, selected by the user not by data</li>
+                <li>are constructed at a <em>confidence level (c)</em>, such as 95%, selected by the user not by data</li>
                 <li><em>increase</em> in <span class="tooltip" title="sample size">\(n\)</span> will <em>decrease length</em> of <em>CI</em> without reducing confidence confidence</li>
             </ul>
             
@@ -46,34 +47,86 @@
 
         <article class="subsection">
             <h1>How to construct a confidence interval</h1>
-            <ol>
-                <li><em>Choose</em> the <span class="tooltip" title="sample mean, sample proportion">statistic</span> that you will use to estimate a population parameter</li>
-                <li><em>Select</em> a <em>confidence level</em> \(\left(c = \left(1 - \alpha\right) \right) \): any percentage, most commons 90%, 95% and 99%</li>
-                <li><em>Find</em> the <em>margin of error</em>: based on wheter the standard deviation is known, \(\sigma\), or not, \(s\)
-                $$\begin{array}{ccl}
-                    \text{margin of error} & = & \text{critical value} \cdot \text{std of sampling distribution} \\
+            
+            <table width="100%" style="text-align: left;">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td width="28%"><b><a href="" target="_self">1. Choose the statistic</a></b></td>
+                        <td><ul>
+                            <li><span class="tooltip" title="sample mean, sample proportion">statistic</span> that you will use to estimate a population parameter</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">2. Select a confidence level (c)</a></b></td>
+                        <td><ul>
+                            <li>any percentage</li>
+                            <li>most commons 90%, 95% and 99%</li>
+                            <li>\(c=1- \alpha\)</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">3. Find the margin of error (me)</a></b></td>
+                        <td><ul>
+                            <li> based on whether the standard deviation is known, \(\sigma\), or not, \(s\)</li>
+                        </ul>
+                        $$\begin{array}{ccl}
+                    \text{me} & = & \text{critical value} \cdot \text{std of sampling distribution} \\
                      & = & p^* \cdot SE
                 \end{array}$$
-                    <ul>
-                        <li>if standard deviation is known, \(\sigma\):
-                        $$p^* \rightarrow z^* = CDF^{-1}_{\mathscr{N}(0,1)} \left( \frac{1+c}{2} \right)$$
-                        </li>
-                        <li>if it is unknown, \(s\):
-                        $$p^* \rightarrow t^* = CDF^{-1}_{t(r)} \left( \frac{1+c}{2} \right)$$
-                        where \(r = n-1\) are the degrees of freedom for the <em>Student t</em> distribution</li>
-                    </ul>
-                </li>
-                <li><em>Specify</em> the <b>confidence interval</b>:
-                $$CI = \text{sample statistic} \pm \text{margin of error}$$
-                    <ul>
-                        <li>if standard deviation is known, \(\sigma\):
-                        $$\text{CI} = \text{sample statistic} \pm z^* \frac{\sigma}{\sqrt{n}}$$</li>
-                        <li>if it is unknown, \(s\):
-                        $$\text{CI} = \text{sample statistic} \pm t^* \frac{s}{\sqrt{n}}$$
-                        where \(n\) is the size of sample used to construct the CI.</li>
-                    </ul>
-                </li>
-            </ol>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr style="text-align: center;">
+                        <td width="50%"><span style="color: #009933; ">known std, \(\sigma\)</span></td>
+                        <td><span style="color: #009933;">unknown std, \(s\)</span></td>
+                    </tr>
+                    <tr>
+                        <td> $$p^* \rightarrow z^* = CDF^{-1}_{\mathscr{N}(0,1)} \left( \frac{1+c}{2} \right)$$</td>
+                        <td>$$p^* \rightarrow t^* = CDF^{-1}_{t(r)} \left( \frac{1+c}{2} \right)$$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">where \(r = n-1\) are the degrees of freedom for the <em>Student t</em> distribution</td>    
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table width="100%"  style="text-align: left;">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td width="28%"><b><a href="" target="_self">4. Specify the confidence interval</a></b></td>
+                        <td>
+                        $$CI = \text{sample statistic} \pm \text{margin of error}$$
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr style="text-align: center;">
+                        <td width="50%"><span style="color: #009933; ">known std, \(\sigma\)</span></td>
+                        <td><span style="color: #009933;">unknown std, \(s\)</span></td>
+                    </tr>
+                    <tr>
+                        <td>$$\text{CI} = \text{sample statistic} \pm z^* \frac{\sigma}{\sqrt{n}}$$</td>
+                        <td>$$\text{CI} = \text{sample statistic} \pm t^* \frac{s}{\sqrt{n}}$$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">where \(n\) is the size of sample used to construct the CI</td>    
+                    </tr>
+                </tbody>
+            </table>
             
             <article class="note">This interval is only exact when the population distribution is normal. For large samples from other population distributions, the interval is approximately correct by the Central Limit Theorem.</article>
         </article>
@@ -121,6 +174,11 @@ This does not mean there is \(0.95\) probability that the value of parameter \(\
                 $$\left( \bar{X} - 0.98 , \bar{X} + 0.98 \right) = \left( 250.2 - 0.98 , 250.2 + 0.98 \right) = \left( 249.22, 251.18 \right)$$
                 <em>As</em> the desired value \(250\) of \(\mu\) is within the resulted confidence interval, there is <em>no reason to believe the machine is wrongly calibrated</em>. The <em>maximum error</em> is calculated to be <em>\(0.98\)</em> since it is the difference between value that we are confident of with upper or lower endpoint.</p>
                 <p>The calculated interval has fixed endpoints, where \(\mu\) might be in between (or not). Thus this event has probability either \(0\) or \(1\). One cannot say: "with probability \((1 − \alpha)\) the parameter \(\mu\) lies in the confidence interval." One only knows that by repetition in \(100(1 − \alpha) \%\) of the cases, \(\mu\) will be in the calculated interval. In \(100\cdot \alpha \%\) of the cases however it does not. And unfortunately one does not know in which of the cases this happens. That is (instead of using the term "probability") why one can say: <em>"with confidence level \(100(1 − \alpha) \%\), \(\mu\) lies in the confidence interval."</em></p>
+            </article>
+            
+            <article class="example">
+                <h1>Klout score</h1>
+                <p></p>
             </article>
         </article>
     </body>
