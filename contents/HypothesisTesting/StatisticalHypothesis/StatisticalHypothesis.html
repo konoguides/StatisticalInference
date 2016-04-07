@@ -39,12 +39,13 @@
                             <li>denoted by \(H_0\)</li>
                             <li>always an <em>equality</em></li>
                             <li>hypothesize that <em>sample observations</em> result <em>purely from chance</em></li>
+                            <li>assumes no significant change exists between current population parameters (e.g. \(\mu\)) and what will be new population parameters after some sort of intervention (e.g. \(\mu_I\))</li>
                             <li>it is the claim we are trying to provide evidence against</li>
-                            <li>commonly written as:
+                            <li>commonly written <span class="tooltip" title="here equals (=) means not significantly different">as*</span>:
                             $$\begin{array}{rl}
-                            H_0: & \mu_0 = \mu \\
-                            H_0: & \mu_0 \geq \mu \\
-                            H_0: & \mu_0 \leq \mu
+                            H_0: & \mu = \mu_I \\
+                            H_0: & \mu \geq \mu_I \\
+                            H_0: & \mu \leq \mu_I
                             \end{array}$$</li>
                         </ul>
                         </td>
@@ -56,13 +57,25 @@
                             <li>always some kind of <em>inequality</em></li>
                             <li>hypothesize that <em>sample observations</em> are <em>influenced by</em> some <em>non-random cause</em></li>
                             <li>is result we are checking against the claim</li>
-                            <li>commonly written as:
-                            $$\begin{array}{rl}
-                            H_a: & \mu_0 \neq \mu \\
-                            H_a: & \mu_0 > \mu \\
-                            H_a: & \mu_0 < \mu
-                            \end{array}$$</li>
+                            <li>commonly written as:</li>
                         </ul>
+                        <table>
+                        	<caption></caption>
+                        	<tbody>
+                        		<tr>
+                        			<td>\(H_a: \mu \neq \mu_I\)</td>
+                        			<td><img src="media/twotailed.png" alt="alt-text" width="px" height="px"></td>
+                        		</tr>
+                        		<tr>
+                        			<td>\(H_a: \mu < \mu_I\)</td>
+                        			<td><img src="media/righttailed.png" alt="alt-text" width="px" height="px"></td>
+                        		</tr>
+                        		<tr>
+                        			<td>\(H_a: \mu > \mu_I\)</td>
+                        			<td><img src="media/lefttailed.png" alt="alt-text" width="px" height="px"></td>
+                        		</tr>
+                        	</tbody>
+                        </table>
                         </td>
                     </tr>
                 </tbody>
@@ -71,6 +84,15 @@
             <h2 id="">Can we accept the null hypothesis</h2>
             <p>Some researchers say that a hypothesis test can have one of two outcomes: you accept the null hypothesis or you reject the null hypothesis. Many statisticians, however, take issue with the notion of "accepting the null hypothesis." Instead, they say: you <em>reject the null hypothesis</em> or you <em>fail to reject the null hypothesis</em>.</p>
             <p>Why the distinction between "acceptance" and "failure to reject?" Acceptance implies that the null hypothesis is true. <em>Failure to reject implies</em> that the <em>data are not sufficiently persuasive</em> for us to prefer the alternative hypothesis over the null hypothesis.</p>
+            
+            <h2 id="">What does it mean to reject the null?</h2>
+            <ul>
+            	<li>there is a <em>significant difference</em> of population parameter <em>after intervention</em></li>
+            	<li>our sample statistic falls <em>within</em> the <em>critical region</em></li>
+            	<li>If <em>z-score</em> \(> 0\), our sample statistic is <em>greater than</em> the <em>z-critical value</em></li>
+            	<li><em>probability</em> of obtaining <em>sample statistic less than</em> the alpha level</li>
+            </ul>
+            
             
             <article class="example">
                 <h1>Fair coins</h1>

@@ -29,6 +29,7 @@
                 <li>evaluates two mutually <span class="tooltip" title="test a claim bout how an observation may be different from the known population parameter">exclusive statements about a population</span></li>
                 <li>determines which is best supported by random sample from population</li>
                 <li>if <em>sample not consistent</em> with the statistical hypothesis, the <em>hypothesis is rejected</em></li>
+                <li>helps to <em>determine</em> if an <em>intervention significantly changes a population</em> prameter</li>
             </ul>
             
         </article>
@@ -56,7 +57,7 @@
                     <img src="media/zCriticalRegions.png" alt="alt-text" width="450px" height="px">
                     <figcaption>One-tailed critical values and regions</figcaption>
                 </figure>
-                <p>We can only say <em>\(\bar{x}\) is significant at \(p \lt 0.05\)</em>, because \(1.82 > 1.65\), the <em>z-critical value</em> for the <em>\(\alpha = 0.05\) critical region</em>, but \(1.82 \ngtr 2.32\) the z-critical value for the \(\alpha = 0.01\) critical region.</p>
+                <p>We can only say <b>\(\bar{x}\) is significant at \(p \lt 0.05\)</b>, because \(1.82 > 1.65\), the <em>z-critical value</em> for the <em>\(\alpha = 0.05\) critical region</em>, but \(1.82 \ngtr 2.32\) the z-critical value for the \(\alpha = 0.01\) critical region.</p>
             </article>
         </article>
         
@@ -92,8 +93,8 @@
                     <tr>
                         <td><b><a href="" target="_self">4. Interpret results</a></b></td>
                         <td><ul>
-                            <li><em>apply</em> the <em>decision rule</em> described in the analysis plan</li>
-                            <li>if test statistic's value is <span class="tooltip" title="based on null hypothesis">unlikely</span> &rightarrow; reject the null hypothesis</li>
+                            <li><em>apply</em> the <b>decision rule</b> described in the analysis plan</li>
+                            <li>if test statistic's value is <span class="tooltip" title="based on null hypothesis; normalized scores that lies inside the critical region">unlikely</span> &rightarrow; reject the null hypothesis</li>
                         </ul>
                         </td>
                     </tr>
@@ -159,24 +160,51 @@
                     <tr>
                         <td><b><a href="" target="_self">One-tailed test</a></b></td>
                         <td><ul>
+                        	<li>used when <em>predicting</em> the <em>direction</em> of the <em>treatment effect</em></li>
                             <li>region of rejection on only one side of sampling distribution, e.g.</li>
                         </ul>
-                        $$\begin{array}{rl}
-                H_0 : & \mu \leq 10 \\
-                H_1 : & \mu > 10
-                \end{array}$$
+                        
+                		<table>
+                        	<caption></caption>
+                        	<tbody>
+                        		<tr>
+                        			<td>$$\begin{array}{rl}
+                H_0 : & \mu \geq \mu_I \\
+                H_1 : & \mu \lt \mu_I
+                \end{array}$$</td>
+                        			<td><img src="media/righttailed.png" alt="alt-text" width="px" height="px"></td>
+                        		</tr>
+                        		<tr>
+                        			<td>$$\begin{array}{rl}
+                H_0 : & \mu \leq \mu_I \\
+                H_1 : & \mu > \mu_I
+                \end{array}$$</td>
+                        			<td><img src="media/lefttailed.png" alt="alt-text" width="px" height="px"></td>
+                        		</tr>
+                        	</tbody>
+                        </table>
                         </td>
                     </tr>
                     <tr>
                         <td><b><a href="" target="_self">Two-tailed test</a></b></td>
                         <td><ul>
+                        	<li><em>non-directional</em> hypothesis test</li>
+                        	<li><em>more conservative</em>: less likely to reject the null when it's true</li>
                             <li>region of rejection on both sides of sampling distribution</li>
                             <li>\(\frac{\alpha}{2}\) on each side, e.g.</li>
                         </ul>
-                        $$\begin{array}{rl}
-                H_0 : & \mu = 10 \\
-                H_1 : & \mu \neq 10
-                \end{array}$$
+                		<table>
+                        	<caption></caption>
+                        	<tbody>
+                        		<tr>
+                        			<td>$$\begin{array}{rl}
+                H_0 : & \mu = \mu_I \\
+                H_1 : & \mu \neq \mu_I
+                \end{array}$$</td>
+                        			<td><img src="media/twotailed.png" alt="alt-text" width="px" height="px"></td>
+                        		</tr>
+                        	</tbody>
+                        </table>
                         </td>
                     </tr>
                     <tr>
