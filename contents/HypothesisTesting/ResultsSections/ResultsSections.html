@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Results sections</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+        <script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });</script>
+        <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body class="kg-content">
+        <header>
+            <h1>Results sections</h1>
+        </header>
+
+        <article class="subsection">
+            <h1>Results sections</h1>
+            
+            <ul>
+                <li><em>where statistical results</em> of the study are <em>presented</em></li>
+                <li>here is an <em>outline</em> of its contents:</li>
+            </ul>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td colspan="4" width="50px" style="color: #2455C3; font-weight: bold;">1. Descriptive statistics \(\left( \mu, s \right)\)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li>in text</li>
+                            <li>in graphs</li>
+                            <li>in tables</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" width="50px" style="color: #2455C3; font-weight: bold;">2. Inferential statistics</td>
+                    </tr>
+                    <tr>
+                        <td width="30%" style="color: #009933; font-weight: bold;">&bull; Hypothesis test</td>
+                        <td><ul>
+                            <li>kind of test: <i>one-sample t-test</i></li>
+                            <li>value of test statistic (p-score)</li>
+                            <li>\(\alpha\)-level, <span class="tooltip" title="degrees of freedom">dof</span></li>
+                            <li><span class="tooltip" title="exact P-value if posible; be aware of two-tailed tests">P-value</span></li>
+                            <li>direction of test: <i>one-tailed or two-tailed test</i></li>
+                        </ul>
+                        <pre><code># APA-like example
+test_stat_name(df)=x.xx, p=.xx, direction
+# by hand (not exact P-value)
+t(24)=-2.50,p<.05, one-tailed
+# using a computer (exact P-value)
+t(24)=-2.50,p=.01, one-tailed</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="color: #009933; font-weight: bold;">&bull; Confidence interval (CI)</td>
+                        <td><ul>
+                            <li>confidence level \(\left(c = 1-\alpha \right)\): \(95\%\)</li>
+                            <li>lower limit</li>
+                            <li>upper limit</li>
+                            <li>CI on what?: <i>what it is telling us;<br>is on a single mean or in a mean difference</i></li>
+                        </ul>
+                        <pre><code># APA-like example - CIs
+Confidence interval on the mean difference
+95% CI = (4.5, 6.5)
+# alternatives
+95% CI = (4.5 - 6.5)
+95% CI = (4.5 to 6.5)</code></pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" width="50px" style="color: #2455C3; font-weight: bold;">3. Effect size measures</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li>Cohen's d: \(d=1.03\)</li>
+                            <li>r<sup>2</sup>: \(r^2 = .28\)</li>
+                        </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </article>
+        
+        <article class="exercise">
+            <h1>Food spend</h1>
+            
+            <ul>
+                <li><a href="media/FoodSpendMJM.html" target="_blank">Food spend results presentation</a></li>
+            </ul>
+        </article>
+
+    </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>One-sample tests</title>
+        <link rel="shortcut icon" type="image/x-icon" href="../../../../../KonoMngr/style/icons/konoicn.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../../../../KonoMngr/style/konoguides.css" />
+        <script src="../../../../../KonoMngr/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });</script>
+        <link rel="stylesheet" href="../../../../../KonoMngr/highlight/styles/googlecode.css">
+        <script src="../../../../../KonoMngr/highlight/highlight.pack.js" type="text/javascript"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body class="kg-content">
+        <header>
+            <h1>One-sample tests</h1>
+        </header>
+
+        <article class="subsection">
+            <h1>One-sample tests</h1>
+            <ul>
+                <li>determines if the population that <em>sample</em> comes from is <em>significantly different</em> from the <em>population</em> of reference</li>
+            </ul>
+            
+            <h2 id="">constructing one-sample hypothesis test</h2>
+            
+            <table width="100%" style="text-align: left;">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td width="28%"><b><a href="" target="_self">1. State the hypothesis</a></b></td>
+                        <td><ul>
+                            <li><em>state</em> null and alternative <em>hypotheses</em></li>
+                            <table>
+                        	<caption></caption>
+                        	<tbody>
+                        		<tr>
+                        		    <td>\(H_0: \mu = \mu_I\)</td>
+                        			<td>\(H_1: \mu \neq \mu_I\)</td>
+                        			<td><img src="media/twotailed.png" alt="alt-text" width="px" height="px"></td>
+                        		</tr>
+                        		<tr>
+                        		    <td>\(H_0: \mu \geq \mu_I\)</td>
+                        			<td>\(H_1: \mu < \mu_I\)</td>
+                        			<td><img src="media/righttailed.png" alt="alt-text" width="px" height="px"></td>
+                        		</tr>
+                        		<tr>
+                        		    <td>\(H_0: \mu \leq \mu_I\)</td>
+                        			<td>\(H_1: \mu > \mu_I\)</td>
+                        			<td><img src="media/lefttailed.png" alt="alt-text" width="px" height="px"></td>
+                        		</tr>
+                        	</tbody>
+                        </table>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">2. Analyze sample data</a></b></td>
+                        <td><ul>
+                            <li><em>find</em> the <em>value</em> of the <span class="tooltip" title="mean score, proportion, t-score, z-score, etc.)">test statistic</span></li>
+                            <li>for example \(\bar{x}\)</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">3. Calculate test statistic</a></b></td>
+                        <td><ul>
+                            <li>based on whether the standard deviation is known, \(\sigma\), or not, \(s\)</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    
+
+                </tbody>
+            </table>
+            
+            <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ -->
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr style="text-align: center;">
+                        <td width="50%"><span style="color: #009933; ">known std, \(\sigma\)</span></td>
+                        <td><span style="color: #009933;">unknown std, \(s\)</span></td>
+                    </tr>
+                    <tr>
+                        <td>$$\begin{array}{rcl}
+                        \text{z-score} & = & \frac{\bar{x} - \mu}{SE} \\
+                        SE & = & \frac{\sigma}{\sqrt{n}}
+                        \end{array}$$</td>
+                        <td>$$\begin{array}{rcl}
+                        \text{t-score} & = & \frac{\bar{x} - \mu}{SE} \\
+                        SE & = & \frac{s}{\sqrt{n}}
+                        \end{array}$$</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ -->
+            
+            <table width="100%" style="text-align: left;">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td width="28%"><b><a href="" target="_self">4. Determine critical point</a></b></td>
+                        <td><ul>
+                            <li>based on whether the standard deviation is known, \(\sigma\), or not, \(s\)</li>
+                        </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ -->
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr style="text-align: center;">
+                        <td width="50%"><span style="color: #009933; ">known std, \(\sigma\)</span></td>
+                        <td><span style="color: #009933;">unknown std, \(s\)</span></td>
+                    </tr>
+                    <tr>
+                        <td> $$p^* \rightarrow z^* = CDF^{-1}_{\mathscr{N}(0,1)} \left( 1-\frac{\alpha}{2} \right)$$</td>
+                        <td>$$p^* \rightarrow t^* = CDF^{-1}_{t(\text{dof})} \left( 1-\frac{\alpha}{2} \right)$$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">where \(\text{dof} = n-1\) are the degrees of freedom for the <em>Student t</em> distribution</td>    
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ -->
+            
+            <table width="100%" style="text-align: left;">
+                <tr>
+                        <td width="28%"><b><a href="" target="_self">5. Interpret results</a></b></td>
+                        <td><ul>
+                            <li><em>apply</em> the <b>decision rule</b> for rejecting the null hypothesis</li>
+                            <li>if test statistic's value is <span class="tooltip" title="based on null hypothesis; normalized scores that lies inside the critical region">unlikely</span> &rightarrow; reject the null hypothesis</li>
+                            <li>approaches are equivalent</li>
+                        </ul>
+                        </td>
+                    </tr>
+            </table>
+            
+            <!-- ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ -->
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td colspan="2" style="text-align: center;"><span style="font-weight: bold; color: #009933;">P-value</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li>strength of evidence in support of a null hypothesis</li>
+                            <li>if <span class="tooltip" title="Represents the probability to observe the calculated sample statistic if the null hypothesis is true. It is the area under the distribution from the z-score to the end of the tail if it's a one-tailed test.">P-value</span> \(< \alpha\) &rightarrow; reject null hypothesis</li>
+                            <li>probability of observing a test statistic as extreme as calculated from sample, assuming the null hypotheis is true</li>
+                        </ul>
+                        <table>
+                        	<caption></caption>
+                        	<tbody>
+                        		<tr>
+                        			<td><img src="media/twotailed.png" alt="alt-text" width="px" height="px"></td>
+                        			<td>$$\begin{array}{cc}
+                        		    H_0: & \mu = \mu_I \\
+                        		    H_1: & \mu \neq \mu_I
+                        		    \end{array}$$\(\)</td>
+                        			<td>$$\begin{cases}
+                        			\text{reject } H_0 & \left| \text{p-score} \right| > \left| p^* \right|\\
+                        			\text{fail to reject } H_0 & \left| \text{p-score} \right| \leq \left| p^* \right|
+                        			\end{cases}$$</td>
+                        		</tr>
+                        		<tr>
+                        			<td><img src="media/righttailed.png" alt="alt-text" width="px" height="px"></td>
+                        			<td>$$\begin{array}{cc}
+                        		    H_0: & \mu \geq \mu_I\\
+                        		    H_1: & \mu < \mu_I
+                        		    \end{array}$$</td>
+                        		    <td>$$\begin{cases}
+                        			\text{reject } H_0 & \text{p-score} > p^*\\
+                        			\text{fail to reject } H_0 & \text{p-score} \leq p^*
+                        			\end{cases}$$</td>
+                        		</tr>
+                        		<tr>
+                        			<td><img src="media/lefttailed.png" alt="alt-text" width="px" height="px"></td>
+                        			<td>$$\begin{array}{cc}
+                        		    H_0: & \mu \leq \mu_I\\
+                        		    H_1: & \mu > \mu_I
+                        		    \end{array}$$</td>
+                        		    <td>$$\begin{cases}
+                        			\text{reject } H_0 & \text{p-score} \lt p^*\\
+                        			\text{fail to reject } H_0 & \text{p-score} \geq p^*
+                        			\end{cases}$$</td>
+                        		</tr>
+                        	</tbody>
+                        </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;"><span style="font-weight: bold; color: #009933;">Region of acceptance</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li>range of values</li>
+                            <li>if test statistic falls in &rightarrow; null hypothesis is not rejected</li>
+                            <li>region of rejection: range of values outside the region of acceptance</li>
+                        </ul>
+                        $$\begin{cases}
+                        			\text{reject } H_0 & \mu \notin \text{CI}\\
+                        			\text{fail to reject } H_0 & \mu \in \text{CI}
+                        			\end{cases}$$
+                        </td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td width="50%"><span style="color: #009933; ">known std, \(\sigma\)</span></td>
+                        <td><span style="color: #009933;">unknown std, \(s\)</span></td>
+                    </tr>
+                    <tr>
+                        <td>$$\begin{array}{rcl}
+                        \text{CI} & = & \bar{x} \pm \text{me} \\
+                        \text{me} & = & z^* \frac{\sigma}{\sqrt{n}}
+                        \end{array}$$</td>
+                        <td>$$\begin{array}{rcl}
+                        \text{CI} & = & \bar{x} \pm \text{me} \\
+                        \text{me} & = & t^* \frac{s}{\sqrt{n}}
+                        \end{array}$$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">where \(n\) is the size of sample used to construct the CI</td>    
+                    </tr>
+                </tbody>
+            </table>
+     
+        </article>
+        
+        <article class="exercise">
+            <h1>One-sample tests</h1>
+            <ul>
+                <li><a href="media/LeftTailedTestMJM.html" target="_blank">Left-tailed test</a></li>
+                <li><a href="media/RightTailedTestMJM.html" target="_blank">Right-tailed test</a></li>
+                <li><a href="media/TwoTailedTestMJM.html" target="_blank">Two-tailed test</a></li>
+            </ul>
+            
+        </article>
+
+    </body>
+</html>
