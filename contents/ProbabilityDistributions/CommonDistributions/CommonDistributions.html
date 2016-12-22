@@ -60,8 +60,8 @@
                         <td colspan="4" style="color: #2878A2; font-weight: bold;">Discrete distributions</td>
                     </tr>
                     <tr>
-                        <td><a href="" target="_self"></a></td>
-                        <td></td>
+                        <td><a href="#binom" target="_self">binom</a></td>
+                        <td>A binomial d.r.v</td>
                         <td><a href="" target="_self"></a></td>
                         <td></td>
                     </tr>
@@ -232,7 +232,105 @@ t.expect(func, args=(df,), loc=0, scale=1, lb=None, ub=None,
         
         <article class="subsection">
             <h1>Discrete distributions</h1>
-            <p></p>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td id="binom" colspan="6" height="50px" style="color: #2878A2; font-weight: bold;">Binomial distribution (<a href="https://docs.scipy.org/doc/scipy-0.16.0/reference/generated/scipy.stats.binom.html#scipy.stats.binom" target="_blank"><code>binom</code></a>)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><ul>
+                            <li><span class="tooltip" title="discrete probability distribution">distribution</span> of <em>number of successes</em> in a sequence of \(n\) <em>independent <b>yes/no</b> experiments</em></li>
+                            <li>a success/failure experiment &rightarrow; <b>Bernoulli experiment</b> or <span class="tooltip" title="when n = 1">Bernoulli trial</span></li>
+                            <li>the basis for the popular binomial test of statistical significance</li>
+                            <li>model <em>events</em> with <em>only <b>two types</b> of <b>independent</b> outcomes</em></li>
+                            <li>autcomes are <span class="tooltip" title="probability of success (p) same for all">identical distributed</span></li>
+                            
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Notation</a></b></td>
+                        <td colspan="2">\(B(n, p)\)</td>
+                        <td colspan="3" rowspan="6">
+                            <img src="media/binomial.png" alt="alt-text" width="px" height="px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Parameters</a></b></td>
+                        <td colspan="2">\(n \in \mathscr{N}\) &mdash; number of trials</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">\(\nu > 0\) &mdash; dof</td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Mean:</a></b></td>
+                        <td colspan="2">$$\begin{cases}
+                        0 & \nu > 1 \\
+                        \text{undefined} & \text{otherwise}
+                        \end{cases}$$</td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Median:</a></b></td>
+                        <td colspan="2">0</td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Mode:</a></b></td>
+                        <td colspan="2">0</td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Variance:</a></b></td>
+                        <td colspan="2">$$\begin{cases}
+                        \frac{\nu}{\nu-2} & \nu > 2 \\
+                        \infty & 1 < \nu \leq 2 \\
+                        \text{undefined} & \text{otherwise}
+                        \end{cases}$$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><b><a href="" target="_self">PDF:</a></b> $$f \left( x | \nu\right) = \frac{\Gamma \left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu \pi}\Gamma \left(\frac{\nu}{2}\right)} \left( 1 + \frac{x^2}{\nu} \right)^{-\frac{\nu + 1}{2}}$$</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><b><a href="" target="_self">CDF:</a></b> $$F_X \left( x | \nu\right) = \frac{1}{2}+x\Gamma\left(\frac{\nu+1}{2}\right)\times\frac{_{2}F_{1}\left(\frac{1}{2},\frac{\nu+1}{2};\frac{3}{2};\frac{x^{2}}{\nu}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}$$
+                        where \(_{2}F_{1}\) is the <a href="https://en.wikipedia.org/wiki/Hypergeometric_function" target="_blank">hypergeometric function</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"><pre><code>from scipy.stats import t
+# KEYWORDS: df = degrees of freedom as a shape parameter
+# standardized form
+ndst = t(df)         # create a frozen distribution
+# use loc and scale to shift and scale dist
+# t.pdf(x, df, loc, scale) -> t.pdf(y, df)/scale with y = (x-loc)/scale
+ndst = t(df, loc, scale)         # create a frozen distribution
+mean, var, skew, kurt = t.stats(loc=0, scale=1, moments='mvsk')
+mean, median, var, std = ndst.mean(), ndst.median(), ndst.var(), ndst.std()</code></pre>
+                        <pre><code># PDF
+t.pdf(x, df)
+# CDF
+t.cdf(x, df)
+# Survival function
+t.sf(x, df)
+# Percent point function (inverse of cdf — percentiles)
+t.ppf(q, df)
+# Inverse survival function
+t.isf(q, df)
+# Endpoints of the range that contains alpha
+# percent of the distribution, simetricaly from the mean
+# c = confidence level
+t.interval(c, loc=sample_statistic, scale=SE)
+# Random variates
+t.rvs(df, loc=0, scale=1, size=1, random_state=None)</code></pre>
+                        <pre><code># Parameter estimates (mean, std) for generic data
+t.fit(data, df)
+# Expected value of a function (of one argument)
+# with respect to the distribution
+t.expect(func, args=(df,), loc=0, scale=1, lb=None, ub=None,
+            conditional=False, **kwds)</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </article>
 
     </body>
