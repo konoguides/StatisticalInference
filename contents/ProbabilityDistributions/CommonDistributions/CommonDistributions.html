@@ -246,6 +246,7 @@ t.expect(func, args=(df,), loc=0, scale=1, lb=None, ub=None,
                             <li>the basis for the popular binomial test of statistical significance</li>
                             <li>model <em>events</em> with <em>only <b>two types</b> of <b>independent</b> outcomes</em></li>
                             <li>autcomes are <span class="tooltip" title="probability of success (p) same for all">identical distributed</span></li>
+                            <li><a href="media/binomial_examples/BinomialDistributionExamples.html" target="_blank">Examples</a></li>
                             
                         </ul>
                         </td>
@@ -253,7 +254,7 @@ t.expect(func, args=(df,), loc=0, scale=1, lb=None, ub=None,
                     <tr>
                         <td><b><a href="" target="_self">Notation</a></b></td>
                         <td colspan="2">\(B(n, p)\)</td>
-                        <td colspan="3" rowspan="6">
+                        <td colspan="3" rowspan="7">
                             <img src="media/binomial.png" alt="alt-text" width="px" height="px">
                         </td>
                     </tr>
@@ -263,70 +264,62 @@ t.expect(func, args=(df,), loc=0, scale=1, lb=None, ub=None,
                     </tr>
                     <tr>
                         <td></td>
-                        <td colspan="2">\(\nu > 0\) &mdash; dof</td>
+                        <td colspan="2">\(p \in \left[ 0, 1 \right]\) &mdash; <span class="tooltip" title="success probability in each trial">succ. prob.</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">\(x \in \left\{ 0, 1, \ldots, n \right\}\) &mdash; <br> number of successes</td>
                     </tr>
                     <tr>
                         <td><b><a href="" target="_self">Mean:</a></b></td>
-                        <td colspan="2">$$\begin{cases}
-                        0 & \nu > 1 \\
-                        \text{undefined} & \text{otherwise}
-                        \end{cases}$$</td>
+                        <td colspan="2"><span class="tooltip" title="mean number of success events in n separated trials">\(np\)</span></td>
                     </tr>
                     <tr>
                         <td><b><a href="" target="_self">Median:</a></b></td>
-                        <td colspan="2">0</td>
+                        <td colspan="2">\(\left \lfloor np \right \rfloor \text{ or } \left \lceil np \right \rceil\)</td>
                     </tr>
                     <tr>
                         <td><b><a href="" target="_self">Mode:</a></b></td>
-                        <td colspan="2">0</td>
+                        <td colspan="2">\(\left \lfloor \left ( n+1 \right ) p \right \rfloor \text{ or }\) <br> \(\left \lceil \left ( n+1 \right ) p \right \rceil -1\)</td>
                     </tr>
                     <tr>
                         <td><b><a href="" target="_self">Variance:</a></b></td>
-                        <td colspan="2">$$\begin{cases}
-                        \frac{\nu}{\nu-2} & \nu > 2 \\
-                        \infty & 1 < \nu \leq 2 \\
-                        \text{undefined} & \text{otherwise}
-                        \end{cases}$$</td>
+                        <td colspan="2">\(np(1-p)\)</td>
+                        <td><b><a href="" target="_self">SE:</a></b></td>
+                        <td colspan="2">\( \sqrt{\frac{p(1-p)}{N}} \), <a href="media/binomial_examples/BinomialDitributionSE.html" target="_blank">explanation</a></td>
                     </tr>
                     <tr>
-                        <td colspan="6"><b><a href="" target="_self">PDF:</a></b> $$f \left( x | \nu\right) = \frac{\Gamma \left(\frac{\nu + 1}{2}\right)}{\sqrt{\nu \pi}\Gamma \left(\frac{\nu}{2}\right)} \left( 1 + \frac{x^2}{\nu} \right)^{-\frac{\nu + 1}{2}}$$</td>
+                        <td colspan="3"><b><a href="" target="_self">PMF:</a></b> $$f \left( x | n,p\right) = \left ( \begin{matrix}
+n\\ 
+x
+\end{matrix} \right ) p^x \left ( 1-p \right )^{n-x}$$</td>
+                        <td colspan="3"><b><a href="" target="_self">CDF:</a></b> $$F_X \left( x | n, p\right) = I_{1-p}\left ( n-k, 1+k \right )$$</td>
                     </tr>
                     <tr>
-                        <td colspan="6"><b><a href="" target="_self">CDF:</a></b> $$F_X \left( x | \nu\right) = \frac{1}{2}+x\Gamma\left(\frac{\nu+1}{2}\right)\times\frac{_{2}F_{1}\left(\frac{1}{2},\frac{\nu+1}{2};\frac{3}{2};\frac{x^{2}}{\nu}\right)}{\sqrt{\nu\pi}\Gamma\left(\frac{\nu}{2}\right)}$$
-                        where \(_{2}F_{1}\) is the <a href="https://en.wikipedia.org/wiki/Hypergeometric_function" target="_blank">hypergeometric function</a></td>
-                    </tr>
-                    <tr>
-                        <td colspan="6"><pre><code>from scipy.stats import t
-# KEYWORDS: df = degrees of freedom as a shape parameter
-# standardized form
-ndst = t(df)         # create a frozen distribution
-# use loc and scale to shift and scale dist
-# t.pdf(x, df, loc, scale) -> t.pdf(y, df)/scale with y = (x-loc)/scale
-ndst = t(df, loc, scale)         # create a frozen distribution
+                        <td colspan="6"><pre><code>from scipy.stats import binom
+ndst = binom(n, p)         # create a frozen distribution
 mean, var, skew, kurt = t.stats(loc=0, scale=1, moments='mvsk')
 mean, median, var, std = ndst.mean(), ndst.median(), ndst.var(), ndst.std()</code></pre>
                         <pre><code># PDF
-t.pdf(x, df)
+binom.pmf(x, n, p, loc=0)
 # CDF
-t.cdf(x, df)
+binom.cdf(x, n, p, loc=0)
 # Survival function
-t.sf(x, df)
+binom.sf(x, n, p, loc=0)
 # Percent point function (inverse of cdf — percentiles)
-t.ppf(q, df)
+binom.ppf(q, n, p, loc=0)
 # Inverse survival function
-t.isf(q, df)
+binom.isf(q, n, p, loc=0)
 # Endpoints of the range that contains alpha
 # percent of the distribution, simetricaly from the mean
 # c = confidence level
-t.interval(c, loc=sample_statistic, scale=SE)
+binom.interval(alpha, n, p, loc=0)
 # Random variates
-t.rvs(df, loc=0, scale=1, size=1, random_state=None)</code></pre>
-                        <pre><code># Parameter estimates (mean, std) for generic data
-t.fit(data, df)
-# Expected value of a function (of one argument)
-# with respect to the distribution
-t.expect(func, args=(df,), loc=0, scale=1, lb=None, ub=None,
-            conditional=False, **kwds)</code></pre>
+binom.rvs(n, p, loc=0, size=1, random_state=None)</code></pre>
+                        <pre><code>binom.mean(n, p, loc=0)
+binom.median(n, p, loc=0)
+binom.var(n, p, loc=0)
+binom.std(n, p, loc=0)</code></pre>
                         </td>
                     </tr>
                 </tbody>

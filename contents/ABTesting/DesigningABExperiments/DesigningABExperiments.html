@@ -20,9 +20,91 @@
         </header>
 
         <article class="subsection">
-            <h1></h1>
-            <p></p>
+            <h1>Sample size definition</h1>
+            
+            <ul>
+                <li>determine sample size <em>to get statistically significant results</em></li>
+                <li>look for <em>increase</em> <span class="tooltip" title="want high value (often 80%) at your practical significance level">sensitivity</span> <em>\( \left( 1-\beta \right)\)</em>, also known as <b>statistical power</b></li>
+                <li>have enough power to <em>conclude with high probability</em> that results are statistically significant</li>
+                <li><a href="http://www.evanmiller.org/ab-testing/sample-size.html" target="_blank">Online A/B test sample size calculator</a></li>
+                <li><b><a href="https://vwo.com/blog/how-to-calculate-ab-test-sample-size/" target="_blank">How large should your A/B test sample size be?
+                </a></b></li>
+            </ul>
+            
+            <h2 id="">statistical power quick overview</h2>
+            
+            <table width="100%">
+                <caption></caption>
+                <colgroup>
+                    <col width="25%"></col>
+                    <col width="25%"></col>
+                    <col width="25%"></col>
+                    <col></col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td colspan="2">\(\alpha = P \left( \text{reject null | null true} \right)\)</td>
+                        <td colspan="2">\(\beta = P \left( \text{fail to reject | null false} \right)\)</td>
+                    </tr>
+                    <tr>
+                        <td><b style="color: #2455C3;">Small sample</b></td>
+                        <td>\(\alpha\) &rightarrow; low</td>
+                        <td>\(\beta\) &rightarrow; high</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><b style="color: #2455C3;">Small sample</b></td>
+                        <td>\(\alpha\) &rightarrow; <em>same</em></td>
+                        <td colspan="2">\(\beta\) &rightarrow; <em>lower</em>: <b>power increased</b></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
         </article>
+        
+    <article class="subsection">
+        <h1>How sample size vary?</h1>
+        
+        <table width="100%">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th>Change</th>
+                    <th>Increase SSize</th>
+                    <th>Decrease SSize</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><em>Higher</em> baseline <em>conversion rate</em></td>
+                    <td style="text-align: center;"><span style="color: #009933; font-weight: bold; font-size: 120%;">&#10004;</span></td>
+                    <td></td>
+                    <td><span class="tooltip" title="remember standard error (SE) is directly proportional to the square root of p(1-p) and inversely proportional to the square root of N. This mean that if you increase p (down 0.5) you have to increase N to maintain the original level of N">why?</span></td>
+                </tr>
+                <tr>
+                    <td><em>Increased</em> practical <em>significance level \(\left( d_{min} \right)\)</em></td>
+                    <td></td>
+                    <td style="text-align: center;"><span style="color: #009933; font-weight: bold; font-size: 120%;">&#10004;</span></td>
+                    <td><span class="tooltip" title="increase the practical significance level means you not longer care small changes, larger changes are easier to detect so you shouldn't need as many samples">why?</span></td>
+                </tr>
+                <tr>
+                    <td><em>Increased confidence level</em> \(\left( 1 - \alpha \right)\)</td>
+                    <td style="text-align: center;"><span style="color: #009933; font-weight: bold; font-size: 120%;">&#10004;</span></td>
+                    <td></td>
+                    <td><span class="tooltip" title="increase the confidence level mean that you want to be more certain that the change has occur before you reject the null, in essence you're being more conservative, if you need to maintain the sensitivity the same you should increase the sample size">why?</span></td>
+                </tr>
+                <tr>
+                    <td><em>Higher sensitivity </em>\(\left( 1 - \beta \right)\)</td>
+                    <td style="text-align: center;"><span style="color: #009933; font-weight: bold; font-size: 120%;">&#10004;</span></td>
+                    <td></td>
+                    <td><span class="tooltip" title="if you want to increase the sensitivity, you're need to collect more samples to narrow the distribution">why?</span></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </article>
 
     </body>
 </html>

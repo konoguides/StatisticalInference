@@ -20,8 +20,68 @@
         </header>
 
         <article class="subsection">
-            <h1></h1>
+            <h1>Hypothesis testing</h1>
+            
+            <ul>
+                <li><em>stablish</em> if our <span class="tooltip" title="the difference we see in our experiment">results</span> are <b>statistically significant</b></li>
+                <li>statistically significant <em>is about repeatability</em></li>
+            </ul>
+            
+        </article>
+        
+        <article class="subsection">
+            <h1>Bussines significance</h1>
+            
+            <ul>
+                <li>decide <em>from a business perspective</em> what <em>change</em> in metric <em>probability</em> is <b>practically significant</b></li>
+                <li><em>what's is</em> <b>substantive</b> in addition to being statistically significant</li>
+            </ul>
+            
+        </article>
+        
+        <article class="subsection">
+            <h1>Confidence interval</h1>
             <p></p>
+        </article>
+        
+        <article class="subsection">
+            <h1>Confidence interval cases</h1>
+            
+            <table width="100%">
+                <caption></caption>
+                <colgroup>
+                    <col width="50px"></col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td colspan="2"><img src="media/CICases.png" alt="alt-text" width="700px" height="px"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #2455C3; font-weight: bold; font-size: 130%;">1°</td>
+                        <td>Confidence interval does not include zero, therefore the result is <em>statistically significant \(\left( \neq 0\right)\)</em> and also <em>practically significant \(\left( \left| \cdot \right| > d_{min} \right)\)</em></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #2455C3; font-weight: bold; font-size: 130%;">2°</td>
+                        <td>Case called <span class="tooltip" title="">neutral</span>, there is <em>no statistically significant chance from zero</em>, since the confidence interval includes zero, and you're also confident that <em>there is not a practically significant change</em></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #2455C3; font-weight: bold; font-size: 130%;">3°</td>
+                        <td>The result is <em>statistically significant but not practically significant</em>, in fact you're confident that there was not a practically significant change</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #2455C3; font-weight: bold; font-size: 130%;">4°</td>
+                        <td>One of the most difficult cases to handle, you have <em>not enough power to draw conclusion</em>. Run an additional test with greater power if possible</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #2455C3; font-weight: bold; font-size: 130%;">5°</td>
+                        <td>Point <em>estimate is beyond</em> what is <em>practically significant</em>, meaning your best guess is that this change has an effect that you care about, <em>but CI overlaps zero</em>, so might not even be a change at all. Run a test with greater power if possible</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; color: #2455C3; font-weight: bold; font-size: 130%;">6°</td>
+                        <td>It is <em>possible that change might not be practically significant</em>. Run a test with greater power if possible</td>
+                    </tr>
+                </tbody>
+            </table>
         </article>
 
     </body>

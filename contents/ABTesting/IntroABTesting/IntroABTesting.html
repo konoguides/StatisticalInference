@@ -262,8 +262,115 @@ table.abexamples > tbody > tr > td:last-child {
         </article>  
         
         <article class="subsection">
-            <h1>How to protect your participants</h1>
-            <p></p>
+            <h1>How to protect your participants: main principles</h1>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li><b style="color: #2455C3;">goal</b>: <em>highlight types of issues</em> you should keep in mind as you design and run experiments</li>
+                            <li>those <em>issues</em> may <em>affect little decisions</em> about authentication and data capture</li>
+                            <li>even whether you run the A/B test at all</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" height="40px" style="color: #2878A2; font-weight: bold; font-size: 120%;">Risk</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li><em>what risk</em> is the <em>participant</em> being <em>exposed to?</em></li>
+                            <li><em>main threshold</em> is whether the risk exceeds that of <span class="tooltip" title="the probability and magnitude of harm that a participant would encounter in normal daily life. The harm considered encompasses physical, psychological and emotional, social, and economic concerns">"minimal risk"</span></li>
+                            <li>are participants <em>facing more than minimal risk?</em></li>
+                            <li>if the <em>risk exceeds</em> minimal risk, then <b>informed consent is required</b></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" height="40px" style="color: #2878A2; font-weight: bold; font-size: 120%;">Benefits</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li><em>what benefits</em> might <em>result</em> from the <em>study</em>?</li>
+                            <li>the <em>benefits justify</em> the <em>risks?</em></li>
+                            <li>in most online A/B testing, the benefits are around <em>improving the product</em></li>
+                            <li>in other social sciences: <em>understand human condition</em> to <em>help in</em> education and development</li>
+                            <li>in medicine: often around <em>improved health outcomes</em></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" height="40px" style="color: #2878A2; font-weight: bold; font-size: 120%;">Alternatives</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li><em>what other choices</em> do <em>participants have?</em></li>
+                            <li><b>main issue</b>: fewer alternatives out there, the more issue around coercion and whether participants really have a choice in whether to participate or not</li>
+                            <li> and how that <span class="tooltip" title="For example, in medical clinical trials testing out new drugs for cancer, given that the other main choice that most participants face is death, the risk allowable for participants, given informed consent, is quite high
+
+In online experiments, the issues to consider are what the other alternative services that a user might have, and what the switching costs might be, in terms of time, money, information, ...">balances against the risks and benefits</span></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" height="40px" style="color: #2878A2; font-weight: bold; font-size: 120%;">Data sensitivity / privacy</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li><em>what</em> type of <em>data</em> is <em>being collected?</em>, <span class="tooltip" title="does it include financial and health data?">how sensitive</span> is it?</li>
+                            <li>what <em>expectation</em> of <em>privacy and confidentiality</em> do participants have?</li>
+                            <li>do <em>participants understand</em> what data is being collected about them?</li>
+                            <li>data gathered is <em>considered personally identifiable?</em>, is there a high <em>re-identification risk?</em></li>
+                            <li>what <span class="tooltip" title="health, psychological / emotional, social, and financial concerns">harm</span> would befall the individual should that data be made public?</li>
+                            <li><em>how is</em> the <em>data handled?</em></li>
+                            <li><a href="https://www.law.upenn.edu/journals/lawreview/articles/volume154/issue3/Solove154U.Pa.L.Rev.477%282006%29.pdf" target="_blank">"A Taxonomy of Privacy"</a>: classifies things people mean by privacy, to better understand privacy violations</li>
+
+
+                            
+                        </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 id="">pseudonymous vs anonymous data</h2>
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td><b><a href="" target="_blank">Identified</a></b></td>
+                        <td><ul>
+                            <li><em>data</em> is stored and collected <em>with personally identifiable information</em></li>
+                            <li><a href="http://www.hhs.gov/ocr/privacy/hipaa/understanding/coveredentities/De-identification/guidance.html#standard" target="_blank">HIPAA 18 personally omdetifiers</a></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_blank">Pseudonymous</a></b></td>
+                        <td><ul>
+                            <li><em>data</em> is stored <em>with a randomly generated id</em></li>
+                            <li>such as a cookie that gets assigned on some event</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_blank">Anonymous</a></b></td>
+                        <td><ul>
+                            <li><em>data</em> is stored and collected <em>without personally identifiable information</em></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_blank">Anonymized</a></b></td>
+                        <td><ul>
+                            <li><em>identified or anonymous data</em>, <em>guaranteed</em> in some way that the <span class="tooltip" title="would be hard to impossible to figure out which individual this data refers to">re-identification</span> <em>risk</em> is <em>low</em> to non-existent</li>
+                        </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
         </article>
         
         
