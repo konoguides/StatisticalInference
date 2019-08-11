@@ -18,10 +18,242 @@
         <header>
             <h1>Metrics: choosing &amp; characterizing</h1>
         </header>
+        
+        <article class="subsection">
+            <h1>Solid metric building</h1>
+            
+            <ol>
+                <li><em>Define</em> a metric</li>
+                <li><em>Analise &amp; built intuition</em> about the metric</li>
+                <li><em>Characterize</em> the metric</li>
+            </ol>
+            
+            <article class="note">Looks only for good enough metrics, avoid <span class="tooltip" title="in overfitting, a statistical model describes random error or noise instead of the underlying relationship. Overfitting occurs when a model is excessively complex, such as having too many parameters relative to the number of observations">overfitting</span>, it's better to have metrics applicable to the entire process</article>
+        </article>
 
         <article class="subsection">
-            <h1></h1>
-            <p></p>
+            <h1>Define a metric</h1>
+            
+            <ul>
+                <li>take metric <em>from high level concept</em> to a <em>practical definition</em></li>
+                <li><em>how</em> are we going <em>to measure</em> if the <em>experiment group</em> is <em>better than</em> the <em>control group</em></li>
+                <li>every funnel's step can be measured and can be a metric</li>
+            </ul>
+            
+            <h2 id="">Creating metrics</h2>
+            <table width="100%">
+                <caption></caption>
+                <colgroup>
+                    <col width="25%"></col>
+                    <col width="15%"></col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td colspan="4" height="50px" style="color: #2878A2; font-weight: bold; font-size: 120%;">1. What you going to use the metric for?</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;"><b><a href="" target="_self">A. Invariant checkings</a></b></td>
+                        <td colspan="2"><ul>
+                            <li>used for data <em>sanity checking</em></li>
+                            <li>metrics that <em>should not change</em> from experiment to control group</li>
+                            <li>e.g.: check <span class="egtext">if populations has the same distribution</span></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4" style="text-align: left;"><b><a href="" target="_self">B. Evaluation metrcis</a></b></td>
+                        <td colspan="2" style="font-weight: bold; color: #009933;">B.1) High-level bussines metrics</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li>what the market share is?</li>
+                            <li>how much revenue you make?</li>
+                            <li>how much users you have?</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="font-weight: bold; color: #009933;">B.2) Detailed metrics</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><ul>
+                            <li><em>on</em> phenomenon <em>measurable characteristics</em></li>
+                            <li>on user experience for example: <em>how long they stop on the page</em></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="font-weight: bold; color: #009933; text-align: center;">Difficult metrics</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"><ul>
+                            <li><em>don't have</em> direct <em>access</em> to the <em>data</em></li>
+                            <li>takes <em>to much time</em></li>
+                            <li><a href="media/additional_techniques.pdf" target="_blank">techniques to approach difficult metrics</a></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="4" height="50px" style="color: #2878A2; font-weight: bold; font-size: 120%;">2. Making a definition</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4"><a href="" target="_self">1. High-level concept</a></td>
+                        <td colspan="2"><ul>
+                            <li>come up with a <em>high-level concept for the metric</em></li>
+                            <li>every word should be understand</li>
+                            <li>the <em>business goal</em> is a possible <em>start point</em></li>
+                            <li>e.g. <span class="egtext">active users, or click-through-probability</span></li>
+                            <li><a href="media/aditional_techniques.html" target="_blank">additional techniques for <span style="font-weight: bold;">brainstorming &amp; validating metrics</span></a></li>
+                            <li><b>kinds of metrics:</b></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" title="">Count</span></td>
+                        <td><ul>
+                            <li><em>number</em> of items that matches a specified criteria</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" title="">Ratios</span></td>
+                        <td><ul>
+                            <li><em>\(\div\)</em> of <em>counts</em></li>
+                            <li><b>measure</b> <em>usability</em></li>
+                            <li>use if <em>interested on increase rate of progression</em></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" title="">Probabilities</span></td>
+                        <td><ul>
+                            <li><em>unique events</em> considered</li>
+                            <li><b>measure</b> <em>progression</em></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                        <td><a href="" target="_self">2. Specify details</a></td>
+                        <td colspan="2"><ul>
+                            <li><em>detailed definition</em> of all <em>concepts</em></li>
+                            <li>determine <em>word-by-word</em> which ones needs explanation</li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="" target="_self">3. Summarize</a></td>
+                        <td colspan="2"><ul>
+                            <li><em>summarize</em> all definition in <span class="tooltip" title="actual complete metric definition">a single metric</span></li>
+                            <li><em>sum</em>, <em>count</em>, <em>average</em>, <em>median</em></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="" target="_self">4*. Composite metric</a></td>
+                        <td colspan="2"><ul>
+                            <li>if have multiple metrics &rightarrow; can <em>create composite metric</em></li>
+                            <li><b>OEC</b>: <span class="tooltip" title="weighted function that combine all metrics">overall evaluation criterion</span></li>
+                        </ul>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="4" height="50px" style="color: #2878A2; font-weight: bold; font-size: 120%;"></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+            <article class="example">
+                <h1>Choosing a high-level definition</h1>
+                <p>For each one of the next <span class="tooltip" title="for the fictional education site Audacity.com">experiments</span>, a high-level definition for the metric to use is provided:</p>
+                
+                <dl>
+                    <dt>Update description on the curse list page</dt>
+                        <dd><em>probability</em> of progression from course list to course page</dd>
+                    <dt>Increase size of "tart now" button</dt>
+                        <dd>click-through-<em>rate</em> on "stat now" button</dd>
+                    <dt>Explain benefits of paid service</dt>
+                        <dd><em>probability</em> that enrolled student pays for coaching</dd>
+                </dl>
+            </article>
+            
+            <article class="example">
+                <h1>Difficult metrics</h1>
+                <p>these are some examples of difficult metrics:</p>
+                <ul>
+                    <li><span class="tooltip" title="# who start second / # who complete first">rate of returning</span> for 2nd course &rightarrow; <em>takes too long</em></li>
+                    <li>average happiness of shoppers &rightarrow; <em>doesn't have data</em></li>
+                    <li>probability of finding information via search &rightarrow; <em>doesn't have data</em></li> 
+                </ul>
+                
+            </article>
+            
+            <article class="example">
+                <h1>Using alternative techniques for difficult cases</h1>
+                
+                <dl>
+                    <dt>measure user engagement</dt>
+                        <dd><ul class="two-cols">
+                            <li>survey</li>
+                            <li>UER</li>
+                            <li>retro analysis</li>
+                            <li>time spent</li>
+                        </ul></div></dd>
+                    <dt>decide whether to extend inventory</dt>
+                        <dd><ul class="three-cols">
+                            <li>external data</li>
+                            <li>survey</li>
+                            <li>focus group</li>
+                        </ul></dd>
+                    <dt>which ads-positions get most views</dt>
+                        <dd><ul class="three-cols">
+                            <li>UER</li>
+                            <li>external data</li>
+                            <li>retro analysis</li>
+                        </ul></dd>
+                    <dt>average happiness of shoppers</dt>
+                        <dd><ul class="three-cols">
+                            <li>survey</li>
+                            <li>WER</li>
+                        </ul>
+                        </dd>
+                    <dt>probability of finding information via search</dt>
+                        <dd><ul class="three-cols">
+                            <li>time spent</li>
+                            <li>clicks on results</li>
+                            <li>follow up queries</li>
+                        </ul></dd>
+                    <dt>rate of returning for 2nd course</dt>
+                        <dd><ul>
+                            <li>survey to define a proxy</li>
+                        </ul></dd>
+                </dl>
+            </article>
+            
+        </article>
+        
+        <article class="subsection">
+            <h1>Built intuition</h1>
+            
+            <ul>
+                <li>understand <em>sensitivity</em> and <em>robustness</em></li>
+                <li><em>prove</em> that the <span class="tooltip" title="testing a metric may involve making independent experiments">metric actually move</span> as we make <em>changes</em></li>
+            </ul>
+            
+        </article>
+        
+        <article class="subsection">
+            <h1>Characterize the metrics</h1>
+            
+            <ul>
+                <li>characterize the variability of the metrics</li>
+                <li></li>
+            </ul>
+            
         </article>
 
     </body>

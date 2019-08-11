@@ -23,7 +23,7 @@
             <h1>What is hypothesis testing?</h1>
             
             <ul>
-                <li><em>formal procedures</em> used to <em>reject or not statistical hypotheses</em></li>
+                <li><em>formal procedures</em> used to <b>reject or not</b> <em>statistical hypotheses</em></li>
                 <li>quantitative <em>way to stablish how likely</em> it is that your <em>results occur by chance</em></li>
                 <li>formally <b>decide</b> if something is <b>likely</b> or <b>unlikely</b></li>
                 <li>allow to <em>determine</em> if something is <b>statistically significant</b></li>
@@ -32,6 +32,50 @@
                 <li>if <em>sample not consistent</em> with the statistical hypothesis, the <em>hypothesis is rejected</em></li>
                 <li>helps to <em>determine</em> if an <em>intervention significantly changes a population</em> prameter</li>
             </ul>
+            
+        </article>
+        
+        
+        <article class="subsection">
+            <h1>Parametric and Non-Parametric tests</h1>
+            
+            <article class="definition">
+                <h1>Parametric hypothesis tests</h1>
+                <p>A statistical <em>test</em> that <em>make assumptions</em> about the <em>underlying distribution of the population</em> from which the sample is being drawn</p>
+            </article>
+            
+            <article class="definition">
+                <h1>Non-Parametric hypothesis tests</h1>
+                <p>A statistical <em>test</em> that <em>does not assume</em> our data is drawn from <em>any particular underlying probability distribution</em></p>
+            </article>
+            
+            <table width="100%">
+                <caption></caption>
+                <tbody>
+                    <tr>
+                        <td><b><a href="" target="_self">Shapiro-Wilk test</a></b></td>
+                        <td><ul>
+                            <li><em>Normality test</em></li>
+                            <li>determines <em>wheter or not</em> the <em>data is Gaussian</em></li>
+                        </ul>
+                        <pre><code># w - the test statistic; p - p-value
+w, p = scipy.stats.shapiro(data)</code></pre></td>
+                    </tr>
+                    <tr>
+                        <td><b><a href="" target="_self">Mann-Whitney U test</a></b></td>
+                        <td><ul>
+                            <li><em>Non-parametric</em> test to <em>compare two samples</em></li>
+                            <li><em>\(H_0\):</em> two <em>populations are the same</em></li>
+                        </ul>
+                        <pre><code># u - U statistic,
+#     equal to min(U for x, U for y);
+# p - p-value assuming
+#     an asymptotic normal distribution
+u, p = scipy.stats.mannwhitneyu(x, y)</code></pre>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             
         </article>
         

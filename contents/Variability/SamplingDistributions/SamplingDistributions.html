@@ -22,6 +22,8 @@
         <article class="subsection">
             <h1>Sampling distributions</h1>
             
+            <p>A way to <em>compare</em> a <em>particular sample in a population to other samples</em> in that population</p>
+            
             <article class="definition">
                 <h1>Sampling distribution</h1>
                 <p>Is the <b>probability distribution</b> of a <span class="tooltip" title="mean, proportion, standard deviation">statistic</span> computed for each possible sample of size \(n\) from a given population of size \(N\).</p>
@@ -31,14 +33,15 @@
                 <h1>Standard error (SE)</h1>
                 
                 <p>The <b>standard deviation</b> of the <em>sampling distribution</em>. Measures its variability, and tell us the interval in which the population mean is most likely going to lie. And it's related with the <i>population standard deviation</i> \(\left( \sigma \right)\) as:
-                $$\sigma = \sqrt{n} \cdot SE \hspace{1cm} \rightarrow \hspace{1cm} SE = \frac{\sigma}{\sqrt{n}}$$
-                where \(n\) is the <span class="tooltip" title="size of the samples">number of observations</span> in the samples associated with the sampling distribution.</p>
+                $$\sigma = \sqrt{n_s} \cdot SE \hspace{1cm} \rightarrow \hspace{1cm} SE = \frac{\sigma}{\sqrt{n_s}}$$
+                where \(n_s\) is the <b>sample size</b>, i.e., the <span class="tooltip" title="size of the samples">number of observations</span> in the samples associated with the sampling distribution.</p>
             </article>
             
             <h2 id="">Standard error in Python</h2>
             <pre class="python"><code># Calculates the standard error of values in input array
 # ddof: number of dof to adjust variance for bias in limited samples
-scipy.stats.sem(a, ddof=1)</code></pre>
+# a_size = input array size; ns = sample size
+scipy.stats.sem(a, ddof=(ss-ns))</code></pre>
             
             <h2 id="">Applications of sampling distributions</h2>
             
@@ -56,7 +59,7 @@ scipy.stats.sem(a, ddof=1)</code></pre>
             
             <article class="theorem">
                 <h1>Central limit (simplified)</h1>
-                <p>The <em>sampling distribution</em> of the mean of any independent, random variable will be <em>normal or nearly normal</em>, if the sample size is large enough.</p>
+                <p>The <em>sampling distribution</em> of the mean of any independent, random variable will be <em>normal or nearly normal</em>, if the sample size is large enough, with mean \(= \mu\) and standard deviation \(\approx \sigma/\sqrt{n_s}\).</p>
             </article>
             
             <ul>
